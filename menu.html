@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NUESTRO MENÚ - Disfrutá de la gran variedad de pizzas de molde y a la piedra, empanadas, tartas, sándwiches y postres de Los Maestros. Pedido rápido online.">
+  <title>Menú - Los Maestros - Pizzería en Buenos Aires</title>
+  
+  <!-- Google Fonts - Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html#home" class="logo-link">
+          <img src="logo-nav.png" alt="Los Maestros" class="logo-img">
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-menu">
+          <li><a href="menu.html" class="nav-link active">Menú</a></li>
+          <li><a href="index.html#sucursales" class="nav-link">Sucursales</a></li>
+          <li><a href="tel:+541148110000" class="nav-link">Pedir Recoleta</a></li>
+          <li><a href="tel:+541147770000" class="nav-link">Pedir B. Norte</a></li>
+          <li><a href="tel:+541149990000" class="nav-link">Pedir Palermo</a></li>
+          <li><a href="prensa.html" class="nav-link">Prensa</a></li>
+          <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Hero Section -->
+  <section class="promos-section" style="padding: 100px 0 50px; text-align: center;">
+    <div class="container" style="padding: 40px 0 20px;">
+      <h1 class="section-title text-white" style="font-size: 3rem; margin-bottom: 10px;">Nuestro Menú</h1>
+      <div class="title-underline bg-white" style="margin: 0 auto 20px;"></div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section class="menu-section">
+
+    <!-- Main Categories selector -->
+    <div class="menu-categories-container">
+      <div class="menu-categories-nav">
+        <button class="menu-category-tab active" data-category="pizzas">
+          <div class="menu-category-img-wrap">
+            <img src="pizza-icon.png" alt="Pizzas">
+          </div>
+          <span class="menu-category-text">Pizzas</span>
+        </button>
+        <button class="menu-category-tab" data-category="empanadas">
+          <div class="menu-category-img-wrap">
+            <img src="empanadas-icon.png" alt="Empanadas">
+          </div>
+          <span class="menu-category-text">Empanadas</span>
+        </button>
+        <button class="menu-category-tab" data-category="tartas">
+          <div class="menu-category-img-wrap">
+            <img src="tartas-icon.png" alt="Tartas">
+          </div>
+          <span class="menu-category-text">Tartas</span>
+        </button>
+        <button class="menu-category-tab" data-category="cafeteria">
+          <div class="menu-category-img-wrap">
+            <img src="cafeteria-icon.png" alt="Cafetería">
+          </div>
+          <span class="menu-category-text">Cafetería</span>
+        </button>
+        <button class="menu-category-tab" data-category="bebidas">
+          <div class="menu-category-img-wrap">
+            <img src="bebidas-icon.png" alt="Bebidas">
+          </div>
+          <span class="menu-category-text">Bebidas</span>
+        </button>
+        <button class="menu-category-tab" data-category="postres">
+          <div class="menu-category-img-wrap">
+            <img src="postres-icon.png" alt="Postres">
+          </div>
+          <span class="menu-category-text">Postres</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Subcategories Selector (Only visible for Pizzas) -->
+    <div class="menu-subcategories-container" id="subcategoriesContainer">
+      <div class="menu-subcategories-nav">
+        <button class="menu-subcategory-tab active" data-subcategory="todas">Todas</button>
+        <button class="menu-subcategory-tab" data-subcategory="las-clasicas">Las Clásicas</button>
+        <button class="menu-subcategory-tab" data-subcategory="las-especiales">Las Especiales</button>
+        <button class="menu-subcategory-tab" data-subcategory="nuestras-creaciones">Nuestras Creaciones</button>
+        <button class="menu-subcategory-tab" data-subcategory="sin-muzzarella">Sin Muzzarella</button>
+        <button class="menu-subcategory-tab" data-subcategory="fugazzas-faina">Fugazzas & Fainá</button>
+      </div>
+    </div>
+
+    <!-- Products Grid Container -->
+    <div class="menu-products-container">
+      <div class="menu-grid">
+        
+        <!-- EMPTY STATE MESSAGE -->
+        <div class="menu-no-results" id="noResultsMessage" style="display: none;">
+          <i class="fa-regular fa-face-frown"></i>
+          <h3>No encontramos productos que coincidan</h3>
+          <p>Probá buscando con otras palabras clave.</p>
+        </div>
+
+        <!-- ==================== PIZZAS CATEGORY ==================== -->
+        
+        <!-- Pizza 1: Muzzarella -->
+        <div class="product-card menu-item-card" id="card-menu-muzzarella" data-category="pizzas" data-subcategory="las-clasicas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Muzzarella" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Muzzarella</h3>
+            <p class="product-ingredients">Salsa de tomate casera, queso muzzarella derretido de primera calidad, orégano y aceitunas verdes.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="8500" onclick="selectSize(this, 'menu-muzzarella')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="17000" onclick="selectSize(this, 'menu-muzzarella')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="21300" onclick="selectSize(this, 'menu-muzzarella')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-muzzarella">21300</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Muzzarella', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 2: Doble Muzzarella -->
+        <div class="product-card menu-item-card" id="card-menu-doblemuzza" data-category="pizzas" data-subcategory="las-clasicas">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Recomendado</span>
+            <img src="pizza-category.jpg" alt="Pizza Doble Muzzarella" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Doble Muzzarella</h3>
+            <p class="product-ingredients">Salsa de tomate artesanal, doble porción de queso muzzarella fundido, orégano y aceitunas seleccionadas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="10100" onclick="selectSize(this, 'menu-doblemuzza')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="20200" onclick="selectSize(this, 'menu-doblemuzza')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="25300" onclick="selectSize(this, 'menu-doblemuzza')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-doblemuzza">25300</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Doble Muzzarella', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 3: Fugazzeta con Queso -->
+        <div class="product-card menu-item-card" id="card-menu-fugazzeta" data-category="pizzas" data-subcategory="las-clasicas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Fugazzeta con Queso" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fugazzeta con Queso</h3>
+            <p class="product-ingredients">Abundante cebolla blanca cortada en pluma cocida a la perfección, queso cremoso derretido y orégano.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="9400" onclick="selectSize(this, 'menu-fugazzeta')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="18800" onclick="selectSize(this, 'menu-fugazzeta')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="23500" onclick="selectSize(this, 'menu-fugazzeta')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-fugazzeta">23500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Fugazzeta con Queso', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 4: Jamón -->
+        <div class="product-card menu-item-card" id="card-menu-jamon" data-category="pizzas" data-subcategory="las-clasicas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Jamón" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Jamón</h3>
+            <p class="product-ingredients">Salsa de tomate casera, queso muzzarella, fetas de jamón cocido seleccionado y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="11100" onclick="selectSize(this, 'menu-jamon')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="22100" onclick="selectSize(this, 'menu-jamon')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="27800" onclick="selectSize(this, 'menu-jamon')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-jamon">27800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 5: Fugazzeta Especial -->
+        <div class="product-card menu-item-card" id="card-menu-fugazzetaesp" data-category="pizzas" data-subcategory="las-clasicas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Fugazzeta Especial" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fugazzeta Especial</h3>
+            <p class="product-ingredients">Cebolla dorada, queso cremoso fundido, fetas de jamón cocido de calidad premium y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="11000" onclick="selectSize(this, 'menu-fugazzetaesp')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="22000" onclick="selectSize(this, 'menu-fugazzetaesp')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="27400" onclick="selectSize(this, 'menu-fugazzetaesp')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-fugazzetaesp">27400</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Fugazzeta Especial', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 6: Jamón y Morrones -->
+        <div class="product-card menu-item-card" id="card-menu-jamonmorrones" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Jamón y Morrones" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Jamón y Morrones</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, jamón cocido, tiras de morrones asados en conserva y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13000" onclick="selectSize(this, 'menu-jamonmorrones')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="26000" onclick="selectSize(this, 'menu-jamonmorrones')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="32500" onclick="selectSize(this, 'menu-jamonmorrones')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-jamonmorrones">32500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón y Morrones', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 7: Napolitana -->
+        <div class="product-card menu-item-card" id="card-menu-napolitana" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Napolitana" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Napolitana</h3>
+            <p class="product-ingredients">Salsa de tomate, queso muzzarella, rodajas de tomates frescos, ajo picado, perejil y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="10500" onclick="selectSize(this, 'menu-napolitana')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="21000" onclick="selectSize(this, 'menu-napolitana')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="26200" onclick="selectSize(this, 'menu-napolitana')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-napolitana">26200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Napolitana', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 8: Napolitana Especial -->
+        <div class="product-card menu-item-card" id="card-menu-napolitanaesp" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Napolitana Especial" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Napolitana Especial</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, jamón, rodajas de tomate, morrones, ajo picado, perejil y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13400" onclick="selectSize(this, 'menu-napolitanaesp')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="26800" onclick="selectSize(this, 'menu-napolitanaesp')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="33500" onclick="selectSize(this, 'menu-napolitanaesp')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-napolitanaesp">33500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Napolitana Especial', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 9: Calabresa -->
+        <div class="product-card menu-item-card" id="card-menu-calabresa" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Calabresa" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Calabresa</h3>
+            <p class="product-ingredients">Salsa de tomate, queso muzzarella derretido, rodajas finas de longaniza calabresa picante y aceitunas.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13000" onclick="selectSize(this, 'menu-calabresa')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="25900" onclick="selectSize(this, 'menu-calabresa')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="32400" onclick="selectSize(this, 'menu-calabresa')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-calabresa">32400</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Calabresa', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 10: Roquefort -->
+        <div class="product-card menu-item-card" id="card-menu-roquefort" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Roquefort" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Roquefort</h3>
+            <p class="product-ingredients">Salsa de tomate, queso muzzarella, queso azul (roquefort) intenso, morrones, rodajas de huevo duro y aceitunas negras.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13100" onclick="selectSize(this, 'menu-roquefort')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="26200" onclick="selectSize(this, 'menu-roquefort')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="32800" onclick="selectSize(this, 'menu-roquefort')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-roquefort">32800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Roquefort', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 11: Provolone -->
+        <div class="product-card menu-item-card" id="card-menu-provolone" data-category="pizzas" data-subcategory="las-especiales">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Provolone" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Provolone</h3>
+            <p class="product-ingredients">Salsa de tomate, queso muzzarella, provolone rallado gratinado crocante, orégano y aceitunas negras.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="12800" onclick="selectSize(this, 'menu-provolone')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="25600" onclick="selectSize(this, 'menu-provolone')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="32000" onclick="selectSize(this, 'menu-provolone')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-provolone">32000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Provolone', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 12: 25 Aniversario -->
+        <div class="product-card menu-item-card" id="card-menu-aniversario" data-category="pizzas" data-subcategory="nuestras-creaciones">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Especialidad</span>
+            <img src="pizza-category.jpg" alt="Pizza 25 Aniversario" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">25 Aniversario</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, champignon al ajillo, rúcula fresca seleccionada, queso parmesano en hebras y aceitunas negras.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13700" onclick="selectSize(this, 'menu-aniversario')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="27400" onclick="selectSize(this, 'menu-aniversario')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="34200" onclick="selectSize(this, 'menu-aniversario')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-aniversario">34200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('25 Aniversario', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 13: Al Verdeo -->
+        <div class="product-card menu-item-card" id="card-menu-verdeo" data-category="pizzas" data-subcategory="nuestras-creaciones">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Al Verdeo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Al Verdeo</h3>
+            <p class="product-ingredients">Salsa de tomate casera, suave queso cremoso derretido y una generosa lluvia de cebolla de verdeo fresca.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="11200" onclick="selectSize(this, 'menu-verdeo')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="22500" onclick="selectSize(this, 'menu-verdeo')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="28100" onclick="selectSize(this, 'menu-verdeo')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-verdeo">28100</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Al Verdeo', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 14: Palmitos -->
+        <div class="product-card menu-item-card" id="card-menu-palmitos" data-category="pizzas" data-subcategory="nuestras-creaciones">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza Palmitos" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Palmitos</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, jamón cocido, palmitos cortados en rodajas, morrones asados y salsa golf premium.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13900" onclick="selectSize(this, 'menu-palmitos')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="27800" onclick="selectSize(this, 'menu-palmitos')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="34800" onclick="selectSize(this, 'menu-palmitos')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-palmitos">34800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Palmitos', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 15: Panceta y Huevo -->
+        <div class="product-card menu-item-card" id="card-menu-pancetahuevo" data-category="pizzas" data-subcategory="nuestras-creaciones">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Panceta y Huevo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Panceta y Huevo</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella derretida, tiras de panceta ahumada crocante y huevos fritos recién preparados.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="13600" onclick="selectSize(this, 'menu-pancetahuevo')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="27200" onclick="selectSize(this, 'menu-pancetahuevo')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="34000" onclick="selectSize(this, 'menu-pancetahuevo')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-pancetahuevo">34000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Panceta y Huevo', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 16: Sardinas -->
+        <div class="product-card menu-item-card" id="card-menu-sardinas" data-category="pizzas" data-subcategory="sin-muzzarella">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza de Sardinas" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sardinas</h3>
+            <p class="product-ingredients">Salsa de tomate de la casa, filetes de sardinas en conserva, orégano y aceitunas negras. Sin queso muzzarella.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="9600" onclick="selectSize(this, 'menu-sardinas')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="19200" onclick="selectSize(this, 'menu-sardinas')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="24000" onclick="selectSize(this, 'menu-sardinas')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-sardinas">24000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Sardinas', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 17: Anchoas -->
+        <div class="product-card menu-item-card" id="card-menu-anchoas" data-category="pizzas" data-subcategory="sin-muzzarella">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Pizza de Anchoas" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Anchoas</h3>
+            <p class="product-ingredients">Salsa de tomate casera concentrada, anchoas en salazón de primera calidad, ajo picado, orégano y aceitunas negras. Tradicional.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="8400" onclick="selectSize(this, 'menu-anchoas')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="16800" onclick="selectSize(this, 'menu-anchoas')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="21000" onclick="selectSize(this, 'menu-anchoas')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-anchoas">21000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Anchoas', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 18: Fugazza Simple -->
+        <div class="product-card menu-item-card" id="card-menu-fugazzasimple" data-category="pizzas" data-subcategory="fugazzas-faina">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Fugazza Simple" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fugazza Simple</h3>
+            <p class="product-ingredients">Masa de pizza tradicional cubierta con abundante cebolla cocida, condimentos y aceite de oliva. Sin queso.</p>
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="individual" data-price="7100" onclick="selectSize(this, 'menu-fugazzasimple')">Indiv.</button>
+                <button class="size-btn" data-size="mediana" data-price="14200" onclick="selectSize(this, 'menu-fugazzasimple')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="17800" onclick="selectSize(this, 'menu-fugazzasimple')">Grande</button>
+              </div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-menu-fugazzasimple">17800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Fugazza Simple', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 19: Fainá -->
+        <div class="product-card menu-item-card" id="card-menu-faina" data-category="pizzas" data-subcategory="fugazzas-faina">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Porción de Fainá" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fainá</h3>
+            <p class="product-ingredients">La tradicional y crocante porción de fainá a base de harina de garbanzo, ideal para acompañar tus porciones de pizza.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Fainá', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pizza 20: Fainá Especial -->
+        <div class="product-card menu-item-card" id="card-menu-fainaesp" data-category="pizzas" data-subcategory="fugazzas-faina">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Fainá Especial" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fainá Especial</h3>
+            <p class="product-ingredients">Nuestra fainá clásica pero con una cubierta especial de cebolla de verdeo fresca y queso parmesano gratinado.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">3800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Fainá Especial', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================== EMPANADAS CATEGORY ==================== -->
+
+        <!-- Empanada 1: Carne Cortada a Cuchillo -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Favorito</span>
+            <img src="pizza-category.jpg" alt="Empanada Carne Cortada a Cuchillo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Carne Cortada a Cuchillo</h3>
+            <p class="product-ingredients">Relleno tradicional de carne vacuna magra cortada a mano, cebolla de verdeo, huevo duro y especias autóctonas.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2100</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Carne Cuchillo', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 2: Carne Suave -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada Carne Suave" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Carne Suave</h3>
+            <p class="product-ingredients">Carne vacuna molida condimentada suavemente, cebolla picada, huevo duro y aceitunas verdes picadas.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Carne Suave', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 3: Carne Picante -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada Carne Picante" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Carne Picante</h3>
+            <p class="product-ingredients">Carne picada con agregados de ají molido y comino que le brindan un toque picante criollo característico.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Carne Picante', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 4: Pollo -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada de Pollo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pollo</h3>
+            <p class="product-ingredients">Pechuga de pollo cocida y desmenuzada con cebolla, morrones asados, huevo duro y condimentos.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada de Pollo', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 5: Jamón y Queso -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada Jamón y Queso" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Jamón y Queso</h3>
+            <p class="product-ingredients">Clásica combinación de daditos de jamón cocido seleccionado y suave queso muzzarella fundido.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Jamón y Queso', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 6: Roquefort con Jamón -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada Roquefort con Jamón" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Roquefort con Jamón</h3>
+            <p class="product-ingredients">Intenso queso azul (roquefort) mezclado con muzzarella e hilos de jamón cocido picado.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2100</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Roquefort Jamón', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 7: Humita -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada de Humita" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Humita</h3>
+            <p class="product-ingredients">Crema de choclo amarillo dulce con salsa blanca casera, cebolla salteada y queso cremoso.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada de Humita', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 8: Verdura -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada de Verdura" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Verdura</h3>
+            <p class="product-ingredients">Espinaca fresca picada y cocida al vapor, ligada con salsa blanca, huevo duro picado y queso parmesano.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada de Verdura', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empanada 9: Cebolla y Queso -->
+        <div class="product-card menu-item-card hidden" data-category="empanadas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Empanada Cebolla y Queso" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cebolla y Queso</h3>
+            <p class="product-ingredients">Cebolla blanca caramelizada suavemente y fundida con abundante queso cremoso y orégano.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2000</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Empanada Cebolla Queso', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================== TARTAS CATEGORY ==================== -->
+
+        <!-- Tarta 1: Jamón y Queso -->
+        <div class="product-card menu-item-card hidden" data-category="tartas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Tarta de Jamón y Queso" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tarta de Jamón y Queso</h3>
+            <p class="product-ingredients">Tarta individual de masa hojaldrada rellena con capas de jamón cocido y queso muzzarella fundido.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">12800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Tarta Jamón y Queso', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarta 2: Verdura -->
+        <div class="product-card menu-item-card hidden" data-category="tartas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Tarta de Verdura" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tarta de Verdura</h3>
+            <p class="product-ingredients">Rellena de espinaca fresca al vapor, salsa blanca casera, trocitos de huevo duro y queso rallado.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">11800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Tarta de Verdura', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarta 3: Gallega -->
+        <div class="product-card menu-item-card hidden" data-category="tartas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Tarta Gallega" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tarta Gallega</h3>
+            <p class="product-ingredients">Clásica tarta gallega rellena de atún desmenuzado en conserva, cebolla caramelizada, morrones rojos y huevo.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">13800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Tarta Gallega', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarta 4: Pollo -->
+        <div class="product-card menu-item-card hidden" data-category="tartas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Tarta de Pollo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tarta de Pollo</h3>
+            <p class="product-ingredients">Pechuga de pollo deshebrada, puerros salteados con crema de leche y queso parmesano gratinado.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">12800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Tarta de Pollo', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================== CAFETERIA CATEGORY ==================== -->
+
+        <!-- Cafetería 1: Café con Leche con Medialunas -->
+        <div class="product-card menu-item-card hidden" data-category="cafeteria">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Café con medialunas" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Café con Leche y Medialunas</h3>
+            <p class="product-ingredients">Café expreso de especialidad batido con leche, acompañado de 2 medialunas clásicas de manteca o de grasa de la casa.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">3500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Café con Medialunas', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cafetería 2: Sándwich de Jamón y Queso -->
+        <div class="product-card menu-item-card hidden" data-category="cafeteria">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Sándwich de Jamón y Queso" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sándwich de Jamón y Queso</h3>
+            <p class="product-ingredients">Preparado en pan francés crocante calentito o en pan de miga tostado con abundante jamón y queso muzzarella.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">4800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Sándwich Jamón y Queso', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cafetería 3: Tostado Carlitos -->
+        <div class="product-card menu-item-card hidden" data-category="cafeteria">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Tostado Carlitos" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tostado Carlitos</h3>
+            <p class="product-ingredients">El clásico tostado triple de miga al estilo porteño con jamón, queso cremoso derretido y una pincelada de ketchup.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">5500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Tostado Carlitos', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cafetería 4: Sándwich de Milanesa Completo -->
+        <div class="product-card menu-item-card hidden" data-category="cafeteria">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Sándwich de Milanesa" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sándwich de Milanesa Completo</h3>
+            <p class="product-ingredients">Pan francés, milanesa de carne o pollo, lechuga repollada, rodajas de tomate fresco, jamón cocido, queso y huevo frito.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">8900</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Sándwich de Milanesa', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================== BEBIDAS CATEGORY ==================== -->
+
+        <!-- Bebida 1: Gaseosa 1.5L -->
+        <div class="product-card menu-item-card hidden" data-category="bebidas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Gaseosa 1.5L" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Gaseosa 1.5L</h3>
+            <p class="product-ingredients">Botella de gaseosa familiar de un litro y medio. Línea Coca-Cola: Coca-Cola, Coca-Cola Sin Azúcar, Sprite o Fanta.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">3800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Gaseosa 1.5L', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bebida 2: Gaseosa 500ml -->
+        <div class="product-card menu-item-card hidden" data-category="bebidas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Gaseosa 500ml" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Gaseosa 500ml</h3>
+            <p class="product-ingredients">Gaseosa en botella individual de medio litro. Variedades: Coca-Cola, Zero, Sprite, Fanta.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Gaseosa 500ml', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bebida 3: Agua Mineral 500ml -->
+        <div class="product-card menu-item-card hidden" data-category="bebidas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Agua Mineral 500ml" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Agua Mineral 500ml</h3>
+            <p class="product-ingredients">Agua mineral de vertiente natural en botella de 500ml. Opciones: Con gas o Sin gas.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">1800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Agua Mineral 500ml', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bebida 4: Cerveza Imperial 1L -->
+        <div class="product-card menu-item-card hidden" data-category="bebidas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Cerveza Imperial 1L" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cerveza Imperial 1L</h3>
+            <p class="product-ingredients">Cerveza retornable helada marca Imperial en botella de litro. Opciones: Blonde (Lager), Red (Amber) o IPA.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">4500</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Cerveza Imperial 1L', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bebida 5: Cerveza Lata Heineken / Stella -->
+        <div class="product-card menu-item-card hidden" data-category="bebidas">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Cerveza en lata" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cerveza Lata 473ml</h3>
+            <p class="product-ingredients">Lata individual de cerveza helada. Marcas disponibles de primer nivel: Heineken o Stella Artois.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Cerveza Lata 473ml', 'unidad')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================== POSTRES CATEGORY ==================== -->
+
+        <!-- Postre 1: Flan Casero -->
+        <div class="product-card menu-item-card hidden" data-category="postres">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Flan casero" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Flan Casero</h3>
+            <p class="product-ingredients">Preparación tradicional de flan con huevos frescos y vainilla. Acompañalo con una cucharada de dulce de leche o crema.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">3200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Flan Casero', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postre 2: Budín de Pan -->
+        <div class="product-card menu-item-card hidden" data-category="postres">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Budín de pan" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Budín de Pan de la Casa</h3>
+            <p class="product-ingredients">Elaborado con pan de panadería propia macerado en leche y horneado lentamente con caramelo clásico.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">3200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Budín de Pan', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postre 3: Ensalada de Frutas -->
+        <div class="product-card menu-item-card hidden" data-category="postres">
+          <div class="product-img-wrapper">
+            <img src="pizza-category.jpg" alt="Ensalada de frutas" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Ensalada de Frutas</h3>
+            <p class="product-ingredients">Mezcla refrescante de frutas frescas cortadas del día: naranja, manzana, pera, banana y frutilla con almíbar.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">2900</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Ensalada de Frutas', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postre 4: Torta de Manzana Tibia con Helado -->
+        <div class="product-card menu-item-card hidden" data-category="postres">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Imperdible</span>
+            <img src="pizza-category.jpg" alt="Torta de Manzana con helado" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Torta de Manzana con Helado</h3>
+            <p class="product-ingredients">Tarta húmeda de manzana asada con canela servida tibia, acompañada por una bocha generosa de helado de crema americana.</p>
+            <div class="product-footer" style="margin-top: auto;">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val">4200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Torta de Manzana con Helado', 'porción')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer" id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Logo & Redes Sociales -->
+        <div class="footer-col col-logo">
+          <div class="footer-logo-wrap" style="margin-bottom: 20px;">
+            <img src="logo-nav.png" alt="Los Maestros" style="max-height: 80px; width: auto;">
+          </div>
+          <div style="margin-top: 10px;">
+            <h4 class="footer-title" style="margin-bottom: 15px; font-size: 1rem;">Redes Sociales (Seguinos)</h4>
+            <div style="display: flex; gap: 12px;">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-link">
+                <i class="fa-brands fa-facebook-f" style="color: #FFC107;"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link">
+                <i class="fa-brands fa-instagram" style="color: #FFC107;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Sucursales Table -->
+        <div class="footer-col">
+          <h4 class="footer-title">Sucursales</h4>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; white-space: nowrap;">
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">Recoleta</td>
+                  <td style="padding: 12px 5px;">Paraná 1249</td>
+                  <td style="padding: 12px 5px;">4815-4430</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">B. Norte</td>
+                  <td style="padding: 12px 5px;">Uriburu 1305</td>
+                  <td style="padding: 12px 5px;">4821-4658</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 5px; color: #FFC107;">Palermo</td>
+                  <td style="padding: 12px 5px;">Solo delivery</td>
+                  <td style="padding: 12px 5px;">4800-1112</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.8);"><i class="fa-regular fa-clock" style="color: #FFC107; margin-right: 5px;"></i> <strong>Horario de atención:</strong> Todos los días de 7 h a 24 h.</p>
+        </div>
+
+        <!-- Col 3: Métodos de Pago -->
+        <div class="footer-col">
+          <h4 class="footer-title">Métodos de Pago</h4>
+          <ul class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-money-bill" style="color: #FFC107;"></i> Efectivo
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-credit-card" style="color: #FFC107;"></i> Crédito / Débito
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-mobile-screen" style="color: #FFC107;"></i> Mercado Pago
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="text-align: center; justify-content: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Agencia de Marketing Digital en Argentina</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Load script logic at the bottom -->
+  <script src="menu.js"></script>
+</body>
+</html>
