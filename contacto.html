@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto - Los Maestros. Dejá tu mensaje y nos pondremos en contacto a la brevedad. Sucursales en Recoleta, Barrio Norte y Palermo.">
+  <title>Contacto - Los Maestros - Pizzería en Buenos Aires</title>
+  
+  <!-- Google Fonts - Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-section {
+      background-color: var(--bg-cream);
+      padding: 60px 0 100px;
+    }
+    
+    .contact-card {
+      background-color: var(--light);
+      border-radius: var(--border-radius-lg);
+      padding: 50px 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(30, 45, 89, 0.05);
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      transition: var(--transition);
+    }
+    
+    .contact-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    
+    .contact-title {
+      color: var(--secondary);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    
+    .contact-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: var(--border-radius);
+      border: 1px solid rgba(30, 45, 89, 0.2);
+      background-color: var(--light);
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+      box-sizing: border-box;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(166, 31, 94, 0.1);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: var(--border-radius);
+      background-color: var(--primary);
+      color: var(--light);
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(166, 31, 94, 0.2);
+    }
+    
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 576px) {
+      .contact-card {
+        padding: 30px 20px;
+      }
+      .contact-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html#home" class="logo-link">
+          <img src="logo-nav.png" alt="Los Maestros" class="logo-img">
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-menu">
+          <li><a href="menu.html" class="nav-link">Menú</a></li>
+          <li><a href="index.html#sucursales" class="nav-link">Sucursales</a></li>
+          <li><a href="tel:+541148110000" class="nav-link">Pedir Recoleta</a></li>
+          <li><a href="tel:+541147770000" class="nav-link">Pedir B. Norte</a></li>
+          <li><a href="tel:+541149990000" class="nav-link">Pedir Palermo</a></li>
+          <li><a href="prensa.html" class="nav-link">Prensa</a></li>
+          <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="promos-section" style="padding: 100px 0 50px; text-align: center;">
+    <div class="container" style="padding: 40px 0 20px;">
+      <h1 class="section-title text-white" style="font-size: 3rem; margin-bottom: 10px;">Contacto</h1>
+      <div class="title-underline bg-white" style="margin: 0 auto 20px;"></div>
+      <p class="text-white" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
+        ¿Tenés alguna consulta o sugerencia? Envianos un mensaje y te responderemos a la brevedad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <div class="container" style="padding: 0;">
+      <div class="contact-card">
+        <h2 class="contact-title">Dejá tu mensaje aquí.</h2>
+        <p class="contact-subtitle">Nos pondremos en contacto a la brevedad.</p>
+        
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre completo*</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Ingresá tu nombre completo" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono" class="form-label">Teléfono*</label>
+            <input type="tel" id="telefono" class="form-control" placeholder="Ingresá tu teléfono" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Correo electrónico*</label>
+            <input type="email" id="email" class="form-control" placeholder="Ingresá tu correo electrónico" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea id="mensaje" class="form-control" placeholder="Escribí tu mensaje aquí..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">
+            <span>Enviar mensaje</span> <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container text-center">
+      <h2 class="newsletter-title">Suscribite y obtené beneficios exclusivos.</h2>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="emailInput" class="newsletter-input" placeholder="Ingresá tu dirección de correo electrónico" required>
+        <button type="submit" class="btn btn-primary">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer" id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Logo & Redes Sociales -->
+        <div class="footer-col col-logo">
+          <div class="footer-logo-wrap" style="margin-bottom: 20px;">
+            <img src="logo-nav.png" alt="Los Maestros" style="max-height: 80px; width: auto;">
+          </div>
+          <div style="margin-top: 10px;">
+            <h4 class="footer-title" style="margin-bottom: 15px; font-size: 1rem;">Redes Sociales (Seguinos)</h4>
+            <div style="display: flex; gap: 12px;">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-link">
+                <i class="fa-brands fa-facebook-f" style="color: #FFC107;"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link">
+                <i class="fa-brands fa-instagram" style="color: #FFC107;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Sucursales Table -->
+        <div class="footer-col">
+          <h4 class="footer-title">Sucursales</h4>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; white-space: nowrap;">
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">Recoleta</td>
+                  <td style="padding: 12px 5px;">Paraná 1249</td>
+                  <td style="padding: 12px 5px;">4815-4430</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">B. Norte</td>
+                  <td style="padding: 12px 5px;">Uriburu 1305</td>
+                  <td style="padding: 12px 5px;">4821-4658</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 5px; color: #FFC107;">Palermo</td>
+                  <td style="padding: 12px 5px;">Solo delivery</td>
+                  <td style="padding: 12px 5px;">4800-1112</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.8);"><i class="fa-regular fa-clock" style="color: #FFC107; margin-right: 5px;"></i> <strong>Horario de atención:</strong> Todos los días de 7 h a 24 h.</p>
+        </div>
+
+        <!-- Col 3: Métodos de Pago -->
+        <div class="footer-col">
+          <h4 class="footer-title">Métodos de Pago</h4>
+          <ul class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-money-bill" style="color: #FFC107;"></i> Efectivo
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-credit-card" style="color: #FFC107;"></i> Crédito / Débito
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-mobile-screen" style="color: #FFC107;"></i> Mercado Pago
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="text-align: center; justify-content: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Agencia de Marketing Digital en Argentina</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Custom Scripts -->
+  <script src="contacto.js"></script>
+</body>
+</html>
