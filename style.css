@@ -925,6 +925,33 @@ img {
   object-fit: cover;
 }
 
+.promo-deco-leaf {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.promo-card:hover .promo-deco-leaf {
+  transform: scale(1.15) rotate(10deg);
+}
+
+.leaf-pos-1 {
+  top: -15px;
+  left: -15px;
+  width: 55px;
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+.leaf-pos-2 {
+  bottom: -15px;
+  left: 20px;
+  width: 50px;
+  height: auto;
+  transform: rotate(25deg);
+}
+
 .promos-legal {
   margin-top: 40px;
   font-size: 0.8125rem;
