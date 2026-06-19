@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initMenuFilters();
   initSearch();
+  initNewsletter();
 });
 
 // 1. Mobile Menu Toggle
@@ -195,4 +196,19 @@ function showToast(message) {
 function addToCart(productName, size) {
   const formattedSize = size.charAt(0).toUpperCase() + size.slice(1);
   showToast(`¡${productName} (${formattedSize}) añadida al pedido online! 🍕`);
+}
+
+// 7. Newsletter subscription
+function initNewsletter() {
+  const form = document.getElementById('newsletterForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('emailInput');
+      if (emailInput && emailInput.value) {
+        showToast(`¡Gracias! Te has suscrito con éxito al boletín informativo. 📬`);
+        emailInput.value = '';
+      }
+    });
+  }
 }

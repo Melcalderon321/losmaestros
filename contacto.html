@@ -33,7 +33,7 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: var(--border-radius-lg);
-      padding: 55px 45px;
+      padding: 35px 40px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.25);
       max-width: 600px;
@@ -52,21 +52,13 @@
       color: var(--light);
       font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       text-align: center;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
     
-    .contact-subtitle {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 1.1rem;
-      text-align: center;
-      margin-bottom: 45px;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    }
-    
     .form-group {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
     
     .form-label {
@@ -104,9 +96,10 @@
     }
     
     .btn-submit {
-      width: 100%;
-      padding: 16px;
-      font-size: 1.1rem;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 12px 36px;
+      font-size: 1rem;
       font-weight: 600;
       border-radius: var(--border-radius);
       background-color: var(--primary);
@@ -182,7 +175,6 @@
     <div class="container" style="padding: 0;">
       <div class="contact-card">
         <h2 class="contact-title">Dejá tu mensaje aquí.</h2>
-        <p class="contact-subtitle">Nos pondremos en contacto a la brevedad.</p>
         
         <form id="contactForm" novalidate>
           <div class="form-group">
