@@ -902,8 +902,6 @@ img {
 .promo-custom-img-wrap {
   width: 125px;
   height: 125px;
-  border-radius: 10px;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
