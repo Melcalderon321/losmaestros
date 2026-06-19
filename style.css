@@ -900,12 +900,10 @@ img {
 }
 
 .promo-custom-img-wrap {
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -916,7 +914,6 @@ img {
 
 .promo-card:hover .promo-custom-img-wrap {
   transform: scale(1.1) rotate(5deg);
-  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .promo-custom-img {
