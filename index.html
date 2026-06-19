@@ -48,7 +48,12 @@
 
   <!-- Hero Section with Custom Slider Component -->
   <section class="hero-section">
-    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-bg-container">
+      <div class="hero-bg-slide active" style="background-image: url('first-slide-bg.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('second-slide-bg.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('empanadas-bg.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('reviews-bg.jpg');"></div>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       
@@ -56,7 +61,7 @@
         <div class="custom-slides-wrapper" id="customSlidesWrapper">
           
           <!-- SLIDER 1: RETIRO RÁPIDO -->
-          <div class="custom-slide-item">
+          <div class="custom-slide-item active">
             <div class="slide-glass">
               <div class="slide-left float-icon-wrap">
                 <img src="phone-pizza-icon.png" alt="Pedido Rápido" class="phone-pizza-slide-img">

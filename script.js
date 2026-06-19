@@ -54,7 +54,8 @@ let customSlideInterval;
 function changeCustomSlide(index) {
   const wrapper = document.getElementById('customSlidesWrapper');
   const dots = document.querySelectorAll('.custom-dot');
-  const heroBg = document.getElementById('heroBg');
+  const bgSlides = document.querySelectorAll('.hero-bg-slide');
+  const slideItems = document.querySelectorAll('.custom-slide-item');
   
   if (!wrapper) return;
 
@@ -62,14 +63,23 @@ function changeCustomSlide(index) {
   // Translate wrapper by multi-slide step: 0% for index 0, -25% for 1, etc.
   wrapper.style.transform = `translateX(-${index * 25}%)`;
 
-  // Change background image of the Hero section for the slides to match their content
-  if (heroBg) {
-    if (index === 3) {
-      heroBg.style.backgroundImage = "url('reviews-bg.jpg')";
-    } else if (index < heroImages.length) {
-      heroBg.style.backgroundImage = `url('${heroImages[index]}')`;
+  // Cross-fade background images cleanly
+  bgSlides.forEach((slide, idx) => {
+    if (idx === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
     }
-  }
+  });
+
+  // Trigger entering animations for slide content elements
+  slideItems.forEach((slide, idx) => {
+    if (idx === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
   
   // Update active states on dots
   dots.forEach((dot, idx) => {
