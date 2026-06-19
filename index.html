@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Los Maestros - Tradición y sabor en Buenos Aires. Disfrutá de la mejor pizza artesanal de molde y a la piedra. Sucursales en Recoleta, Barrio Norte y Palermo.">
+  <title>Los Maestros - Pizzería en Buenos Aires</title>
+  
+  <!-- Google Fonts - Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="main-header" id="home">
+    <div class="header-container">
+      <div class="logo">
+        <a href="#home" class="logo-link">
+          <img src="logo-nav.png" alt="Los Maestros" class="logo-img">
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Inicio</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#promociones" class="nav-link">Franquicias</a></li>
+          <li><a href="#sucursales" class="nav-link">Sucursales</a></li>
+          <li><a href="#galeria" class="nav-link">Fotos</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Custom Slider Component -->
+  <section class="hero-section">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      
+      <div class="custom-slider-container">
+        <div class="custom-slides-wrapper" id="customSlidesWrapper">
+          
+          <!-- SLIDER 1: RETIRO RÁPIDO -->
+          <div class="custom-slide-item">
+            <div class="slide-glass">
+              <div class="slide-left float-icon-wrap">
+                <img src="phone-pizza-icon.png" alt="Pedido Rápido" class="phone-pizza-slide-img">
+              </div>
+              <div class="slide-center">
+                <span class="slide-tag">PEDÍ POR TELÉFONO Y RETIRÁ EN SOLO</span>
+                <h2 class="slide-xl-title">15 MINUTOS</h2>
+              </div>
+              <div class="slide-right">
+                <a href="tel:+541148110000" class="btn btn-cta">Hacé tu pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDER 2: DESCUENTO TAKE AWAY -->
+          <div class="custom-slide-item">
+            <div class="slide-glass">
+              <div class="slide-left giant-discount">
+                10% OFF
+              </div>
+              <div class="slide-center">
+                <h2 class="slide-lg-title">TAKE AWAY</h2>
+                <span class="slide-tag-white">PAGO EN EFECTIVO</span>
+                <p class="slide-desc-xs">Mínimo $18.000 • Exclusivo sucursal Recoleta y B. Norte</p>
+              </div>
+              <div class="slide-right">
+                <a href="#sucursales" class="btn btn-cta">Hacé tu pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDER 3: PROMO EMPANADAS -->
+          <div class="custom-slide-item">
+            <div class="slide-glass">
+              <div class="slide-left empanada-icon-wrap">
+                <img src="empanada-icon.png" alt="Empanada" class="empanada-slide-img">
+              </div>
+              <div class="slide-center">
+                <h2 class="slide-lg-title">Llevá 14 empanadas</h2>
+                <h2 class="slide-xl-title-accent">PAGÁS SOLO 12</h2>
+                <p class="slide-desc-xs">*Exclusivo para take away abonando en efectivo.</p>
+              </div>
+              <div class="slide-right">
+                <a href="#sucursales" class="btn btn-cta">Hacé tu pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDER 4: SOCIAL PROOF / RESEÑAS -->
+          <div class="custom-slide-item flex-reviews">
+            <div class="slide-reviews">
+              <div class="reviews-header">
+                <h2 class="reviews-title">¡Somos la mejor pizza de Buenos Aires!</h2>
+                <div class="reviews-badges">
+                  <div class="review-badge-item google-badge">
+                    <img src="google-icon.png" alt="Google" class="badge-img-icon">
+                    <span>Google Reviews</span>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="review-badge-item guru-badge">
+                    <img src="guru-badge.png" alt="Restaurant Guru" class="badge-img-icon">
+                    <span>Restaurant Guru Best Pizza</span>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-grid">
+                <!-- Tarjeta 1 -->
+                <div class="review-card-item">
+                  <span class="quote-mark">“</span>
+                  <div class="review-user-info">
+                    <span class="user-name">SDA</span>
+                    <div class="user-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <p class="review-text">Increíbles empanadas. No se vayan del lugar sin probar las empanadas. Las pizzas muy buenas también. El mozo, el chico joven, muy profesional y atento.</p>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="review-card-item">
+                  <span class="quote-mark">“</span>
+                  <div class="review-user-info">
+                    <span class="user-name">Comer Viajar y Más</span>
+                    <div class="user-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <p class="review-text">Soy cliente frecuente. Las pizzas son riquísimas. Mi favorita es la de palmitos. Pido por lo general para llevar. Tienen promociones por pago en efectivo y según el día otras promociones.</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="review-card-item">
+                  <span class="quote-mark">“</span>
+                  <div class="review-user-info">
+                    <span class="user-name">Maria del Rosario Villavicencio</span>
+                    <div class="user-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <p class="review-text">Los amo. De mis pizzas y empanadas preferidas de la ciudad. Siempre lleno. Trabajan a mil los chicos, no paran un minuto. Son lo más. Siempre vamos o pedimos con mi familia.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Minimalist dots -->
+      <div class="custom-slider-dots">
+        <span class="custom-dot active" data-slide="0" onclick="changeCustomSlide(0)"></span>
+        <span class="custom-dot" data-slide="1" onclick="changeCustomSlide(1)"></span>
+        <span class="custom-dot" data-slide="2" onclick="changeCustomSlide(2)"></span>
+        <span class="custom-dot" data-slide="3" onclick="changeCustomSlide(3)"></span>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Introduction and Quick Menu -->
+  <section class="intro-section" id="nosotros">
+    <!-- Decorative background patterns -->
+    <img src="vector-6.png" class="bg-pattern pattern-1" alt="">
+    <img src="vector-7.png" class="bg-pattern pattern-2" alt="">
+    <img src="vector-8.png" class="bg-pattern pattern-3" alt="">
+    <img src="vector-10.png" class="bg-pattern pattern-4" alt="">
+    <img src="vector-11.png" class="bg-pattern pattern-5" alt="">
+
+    <div class="container">
+      <div class="intro-header text-center">
+        <h2 class="section-title-large">LOS MAESTROS</h2>
+        <h3 class="section-subtitle-large">PIZZERÍA EN BUENOS AIRES</h3>
+        <p class="section-desc-large">Tenemos memoria italiana y sabor bien Argentino.</p>
+      </div>
+
+      <div class="categories-bar-row">
+        <!-- Stamp Block -->
+        <div class="categories-stamp-card">
+          <div class="stamp-card-inner">
+            <span class="stamp-tag">NUESTRAS</span>
+            <span class="stamp-title">CATEGORÍAS</span>
+            <a href="#productos" class="stamp-link">VER MENÚ COMPLETO <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+          </div>
+        </div>
+
+        <!-- Category items -->
+        <div class="category-card active" data-category="pizzas">
+          <div class="category-img-wrap">
+            <img src="pizza-category.jpg" alt="Pizzas" class="category-img">
+          </div>
+          <span class="category-name">Pizzas</span>
+        </div>
+
+        <div class="category-card" data-category="empanadas">
+          <div class="category-img-wrap">
+            <img src="empanadas-category.jpeg" alt="Empanadas" class="category-img">
+          </div>
+          <span class="category-name">Empanadas</span>
+        </div>
+
+        <div class="category-card" data-category="tartas">
+          <div class="category-img-wrap">
+            <img src="tarta-category.jpeg" alt="Tartas" class="category-img">
+          </div>
+          <span class="category-name">Tartas</span>
+        </div>
+
+        <div class="category-card" data-category="bebidas">
+          <div class="category-img-wrap">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=150&h=150&q=80" alt="Bebidas" class="category-img">
+          </div>
+          <span class="category-name">Bebidas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="products-section" id="productos">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="products-grid">
+        <!-- Card 1: 25 Aniversario -->
+        <div class="product-card" id="card-aniversario">
+          <div class="product-img-wrapper">
+            <img src="25-aniversario.jpg" alt="Pizza 25 Aniversario" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">25 Aniversario</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, champignon al ajillo, rúcula y parmesano con aceitunas negras.</p>
+            
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="porción" data-price="6200" onclick="selectSize(this, 'aniversario')">Porción</button>
+                <button class="size-btn" data-size="individual" data-price="13500" onclick="selectSize(this, 'aniversario')">Individual</button>
+                <button class="size-btn" data-size="mediana" data-price="27400" onclick="selectSize(this, 'aniversario')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="34200" onclick="selectSize(this, 'aniversario')">Grande</button>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-aniversario">34200</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('25 Aniversario', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Al Verdeo -->
+        <div class="product-card" id="card-verdeo">
+          <div class="product-img-wrapper">
+            <img src="al-verdeo.jpg" alt="Pizza Al Verdeo" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Al Verdeo</h3>
+            <p class="product-ingredients">Salsa de tomate, queso cremoso y cebolla de verdeo picada.</p>
+            
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn" data-size="porción" data-price="4800" onclick="selectSize(this, 'verdeo')">Porción</button>
+                <button class="size-btn" data-size="individual" data-price="11000" onclick="selectSize(this, 'verdeo')">Individual</button>
+                <button class="size-btn" data-size="mediana" data-price="23300" onclick="selectSize(this, 'verdeo')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="28100" onclick="selectSize(this, 'verdeo')">Grande</button>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-verdeo">28100</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Al Verdeo', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Napolitana -->
+        <div class="product-card" id="card-napolitana">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza Napolitana" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Napolitana</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, rodajas de tomate natural fresco, ajo picado, albahaca fresca y aceite de oliva virgen.</p>
+            
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn active" data-size="chica" data-price="4900" onclick="selectSize(this, 'napolitana')">Chica</button>
+                <button class="size-btn" data-size="mediana" data-price="7300" onclick="selectSize(this, 'napolitana')">Mediana</button>
+                <button class="size-btn" data-size="grande" data-price="9100" onclick="selectSize(this, 'napolitana')">Grande</button>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-napolitana">9100</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Napolitana', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Jamón y morrones -->
+        <div class="product-card" id="card-jamon">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1594007654729-407ededc49c8?auto=format&fit=crop&w=800&q=80" alt="Pizza Jamón y morrones" class="product-img">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Jamón y morrones</h3>
+            <p class="product-ingredients">Nuestra base clásica de salsa de tomate y muzzarella, cubierta con jamón cocido seleccionado y morrones asados en tiras.</p>
+            
+            <div class="product-options">
+              <span class="option-label">Tamaño:</span>
+              <div class="size-selector">
+                <button class="size-btn active" data-size="chica" data-price="5300" onclick="selectSize(this, 'jamon')">Chica</button>
+                <button class="size-btn" data-size="mediana" data-price="7900" onclick="selectSize(this, 'jamon')">Mediana</button>
+                <button class="size-btn" data-size="grande" data-price="9800" onclick="selectSize(this, 'jamon')">Grande</button>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="currency">$</span>
+                <span class="price-val" id="price-jamon">9800</span>
+              </div>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón y morrones', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="products-footer text-center">
+        <a href="#productos" class="btn btn-secondary btn-lg">Ver Más Productos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotions Section (Green Block) -->
+  <section class="promos-section" id="promociones">
+    <div class="container">
+      <div class="section-header text-center light-text">
+        <h2 class="section-title text-white">Promociones Destacadas</h2>
+        <div class="title-underline bg-white"></div>
+      </div>
+
+      <div class="promos-grid">
+        <!-- Lunes Promo -->
+        <div class="promo-card">
+          <div class="promo-day">LUNES</div>
+          <div class="promo-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=600&q=80" alt="Promo Lunes" class="promo-img">
+          </div>
+          <div class="promo-content">
+            <h3 class="promo-title">"Pedí una pizza grande y llevate una grande"</h3>
+            <p class="promo-desc">Comprando cualquier pizza grande de molde de nuestra carta, te regalamos una de muzzarella para compartir.</p>
+            <a href="#sucursales" class="btn btn-primary btn-block">Pedí online sucursal</a>
+          </div>
+        </div>
+
+        <!-- Martes Promo -->
+        <div class="promo-card">
+          <div class="promo-day">MARTES</div>
+          <div class="promo-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1628102422744-b003664d93ee?auto=format&fit=crop&w=600&q=80" alt="Promo Martes" class="promo-img">
+          </div>
+          <div class="promo-content">
+            <h3 class="promo-title">"Pedí 4 empanadas y pagá 3"</h3>
+            <p class="promo-desc">Disfrutá de nuestras empanadas de carne cortada a cuchillo, jamón y queso, o verdura. ¡Llevás 4, pagás 3!</p>
+            <a href="#sucursales" class="btn btn-primary btn-block">Pedí online sucursal</a>
+          </div>
+        </div>
+
+        <!-- Miércoles Promo -->
+        <div class="promo-card">
+          <div class="promo-day">MIÉRCOLES</div>
+          <div class="promo-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Promo Miércoles" class="promo-img">
+          </div>
+          <div class="promo-content">
+            <h3 class="promo-title">"Comiendo en la sucursal tenés un postre de regalo"</h3>
+            <p class="promo-desc">Con tu cena o almuerzo en cualquiera de nuestros locales, te obsequiamos un clásico flan casero o porción de postre.</p>
+            <a href="#productos" class="btn btn-secondary btn-block">Ver Menú en sucursal</a>
+          </div>
+        </div>
+      </div>
+      
+      <p class="promos-legal text-center">* Válido únicamente para pago en efectivo o tarjeta de débito en sucursales adheridas.</p>
+    </div>
+  </section>
+
+  <!-- Institutional / History Section -->
+  <section class="history-section" id="historia">
+    <div class="history-bg-layer"></div>
+    <div class="container">
+      <div class="history-grid">
+        <div class="polaroid-wrapper">
+          <!-- Polaroid 1: Frente del local -->
+          <div class="polaroid-card card-left">
+            <div class="tape-piece"></div>
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Frente del Local" class="polaroid-img">
+            <p class="polaroid-caption">Nuestro rincón favorito, Recoleta</p>
+          </div>
+          <!-- Polaroid 2: Maestros en cocina -->
+          <div class="polaroid-card card-right">
+            <div class="tape-piece"></div>
+            <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=600&q=80" alt="Maestros Pizzeros" class="polaroid-img">
+            <p class="polaroid-caption">El secreto está en nuestras manos</p>
+          </div>
+        </div>
+        
+        <div class="history-text">
+          <h2 class="section-title">"Somos ese lugar que transforma preparaciones simples en momentos únicos."</h2>
+          <p class="section-description">
+            En Los Maestros llevamos adelante una cocina honesta. La masa de maduración lenta, estirada a mano y horneada en horno de leña, es el soporte donde combinamos ingredientes frescos con una tradición de más de 30 años en la gastronomía porteña.
+          </p>
+          <p class="section-description">
+            Vení a respirar el aroma a masa caliente, la calidez de un trato familiar y la mística de las pizzerías clásicas de Buenos Aires.
+          </p>
+          <a href="#contacto" class="btn btn-primary btn-lg">Conocé la historia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branches Section -->
+  <section class="branches-section" id="sucursales">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Sucursales</h2>
+        <p class="section-subtitle">¿Cuál es tu sucursal más cercana?</p>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="branches-grid">
+        <!-- Recoleta -->
+        <div class="branch-card">
+          <div class="branch-icon-header">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3 class="branch-name">RECOLETA</h3>
+          <p class="branch-address"><i class="fa-solid fa-location-dot"></i> Paraná 1243, CABA</p>
+          <div class="branch-buttons">
+            <a href="tel:+541148110000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
+            <a href="#productos" class="btn btn-primary btn-sm"><i class="fa-solid fa-pizza-slice"></i> Pedí on line</a>
+          </div>
+        </div>
+
+        <!-- Barrio Norte -->
+        <div class="branch-card">
+          <div class="branch-icon-header">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3 class="branch-name">BARRIO NORTE</h3>
+          <p class="branch-address"><i class="fa-solid fa-location-dot"></i> Ancon 5432, CABA</p>
+          <div class="branch-buttons">
+            <a href="tel:+541147770000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
+            <a href="#productos" class="btn btn-primary btn-sm"><i class="fa-solid fa-pizza-slice"></i> Pedí on line</a>
+          </div>
+        </div>
+
+        <!-- Palermo -->
+        <div class="branch-card">
+          <div class="branch-icon-header">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3 class="branch-name">PALERMO</h3>
+          <p class="branch-address"><i class="fa-solid fa-phone"></i> Delivery & Retiro en Local</p>
+          <div class="branch-buttons">
+            <a href="tel:+541149990000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
+            <a href="#productos" class="btn btn-primary btn-sm"><i class="fa-solid fa-pizza-slice"></i> Pedí on line</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Banner (Variety Highlight) -->
+  <section class="secondary-banner">
+    <div class="banner-container">
+      <div class="banner-text-block">
+        <h2 class="banner-title">Conocé más opciones en nuestras sucursales.</h2>
+        <p class="banner-desc">Desde nuestras icónicas empanadas norteñas hasta sabores tradicionales de moldes combinados.</p>
+        <a href="#productos" class="btn btn-secondary btn-lg">Ver Todas las opciones</a>
+      </div>
+      <div class="banner-img-block">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Pizza de Molde Especial" class="banner-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Commitment Section -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Nuestro compromiso</h2>
+        <p class="section-subtitle">Viví la experiencia de nuestra pizza tradicional</p>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="gallery-mosaic">
+        <!-- Photo 1 -->
+        <div class="gallery-item item-large">
+          <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80" alt="Ingredientes frescos" class="gallery-img">
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Ingredientes seleccionados, frescos del día</span>
+          </div>
+        </div>
+        <!-- Photo 2 -->
+        <div class="gallery-item item-large">
+          <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=80" alt="Pizza artesanal terminada" class="gallery-img">
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Pizza cocida con espinaca, huevo y morrones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press / News Section (Light Blue Block) -->
+  <section class="press-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">NOTICIAS y mucho más...</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="press-grid">
+        <!-- Video 1 -->
+        <div class="press-card" onclick="openVideoModal('Entrevista a dueños de Los Maestros', 'El diario de turismo')">
+          <div class="video-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=500&q=80" alt="El diario de turismo" class="video-thumb">
+            <div class="play-overlay">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="press-badge">El diario de turismo</span>
+          </div>
+          <div class="press-content">
+            <h3 class="press-card-title">Entrevista a dueños de Los Maestros.</h3>
+            <p class="press-card-desc">Conocé la historia contada en primera persona por los fundadores de la emblemática marca de pizzas porteña.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="press-card" onclick="openVideoModal('El secreto de la masa madurada', 'Los Maestros TV')">
+          <div class="video-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Masa madurada" class="video-thumb">
+            <div class="play-overlay">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="press-badge">Receta de la casa</span>
+          </div>
+          <div class="press-content">
+            <h3 class="press-card-title">El secreto de la masa madurada.</h3>
+            <p class="press-card-desc">Un recorrido visual por el proceso de fermentación lenta de 48 horas que le da esa textura única e inigualable.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="press-card" onclick="openVideoModal('Conocé a los artistas de la pizza en Argentina', 'Gourmet Club')">
+          <div class="video-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=500&q=80" alt="Artistas de la pizza" class="video-thumb">
+            <div class="play-overlay">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="press-badge">Gourmet Club</span>
+          </div>
+          <div class="press-content">
+            <h3 class="press-card-title">Conocé a los artistas de la pizza en Argentina.</h3>
+            <p class="press-card-desc">Informe especial sobre los maestros pizzeros más importantes del país y el rol histórico de nuestra cocina.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4 - Centered below grid -->
+      <div class="press-centered-row">
+        <div class="press-card large-video-card" onclick="openVideoModal('Nota de prensa de Los Maestros en formato video', 'Especial de Domingo')">
+          <div class="video-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1460889687773-43c7b73fac88?auto=format&fit=crop&w=800&q=80" alt="Prensa Video" class="video-thumb">
+            <div class="play-overlay">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="press-badge">Especial Domingo</span>
+          </div>
+          <div class="press-content text-center">
+            <h3 class="press-card-title">Nota de prensa en formato video.</h3>
+            <p class="press-card-desc">Documental corto sobre el impacto de la pizza porteña en la cultura urbana contemporánea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter & Footer -->
+  <section class="newsletter-section">
+    <div class="container text-center">
+      <h2 class="newsletter-title">Enterate de todo antes que nadie.</h2>
+      <p class="newsletter-desc">Suscribite para recibir nuestras promociones exclusivas, nuevos lanzamientos y recetas secretas.</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" id="emailInput" class="newsletter-input" placeholder="Ingresá tu dirección de correo electrónico" required>
+        <button type="submit" class="btn btn-primary">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer" id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Logo alternative version -->
+        <div class="footer-col col-logo">
+          <div class="logo-alt">
+            <span class="logo-circle-alt">LM</span>
+            <div class="logo-title-wrap">
+              <h4>Los Maestros</h4>
+              <span>Pizzería Tradicional</span>
+            </div>
+          </div>
+          <p class="footer-about">Llevamos el sabor único y la tradición artesanal de la pizza de molde a tu mesa desde hace más de 30 años.</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Sucursales links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Sucursales</h4>
+          <ul class="footer-links">
+            <li><a href="#sucursales">Recoleta (Paraná 1243)</a></li>
+            <li><a href="#sucursales">Barrio Norte (Ancon 5432)</a></li>
+            <li><a href="#sucursales">Palermo (Delivery)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Teléfonos -->
+        <div class="footer-col">
+          <h4 class="footer-title">Teléfonos</h4>
+          <ul class="footer-phones">
+            <li><a href="tel:+541148110000"><i class="fa-solid fa-phone"></i> Recoleta: 4811-0000</a></li>
+            <li><a href="tel:+541147770000"><i class="fa-solid fa-phone"></i> Barrio Norte: 4777-0000</a></li>
+            <li><a href="tel:+541149990000"><i class="fa-solid fa-phone"></i> Palermo Delivery: 4999-0000</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Los Maestros Pizzería. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#" onclick="alert('Políticas de Privacidad de Los Maestros')">Políticas de Privacidad</a>
+          <span class="divider">|</span>
+          <a href="#" onclick="alert('Defensa del Consumidor - Enlace oficial')">Defensa del Consumidor</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Videos -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
+    <div class="video-modal-container">
+      <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+      <div class="video-modal-header">
+        <h3 id="modalVideoTitle">Título del Video</h3>
+        <span id="modalVideoMedia">Medio de prensa</span>
+      </div>
+      <div class="video-modal-body">
+        <div class="fake-video-player">
+          <div class="spinner"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+          <i class="fa-solid fa-play fake-play-btn"></i>
+          <span>Simulando transmisión de video de Los Maestros...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container for Quick Purchases -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
