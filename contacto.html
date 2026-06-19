@@ -20,16 +20,22 @@
   <style>
     /* Contact Page Specific Styles */
     .contact-section {
-      background-color: var(--bg-cream);
-      padding: 60px 0 100px;
+      background-image: linear-gradient(rgba(13, 13, 13, 0.55), rgba(13, 13, 13, 0.55)), url('IMG_2449.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 100px 0;
     }
     
     .contact-card {
-      background-color: var(--light);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-radius: var(--border-radius-lg);
-      padding: 50px 40px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid rgba(30, 45, 89, 0.05);
+      padding: 55px 45px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       max-width: 600px;
       width: 100%;
       margin: 0 auto;
@@ -37,23 +43,26 @@
     }
     
     .contact-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
     
     .contact-title {
-      color: var(--secondary);
-      font-size: 2rem;
+      color: var(--light);
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
     
     .contact-subtitle {
-      color: var(--text-muted);
-      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     }
     
     .form-group {
@@ -63,17 +72,19 @@
     .form-label {
       display: block;
       font-weight: 600;
-      color: var(--secondary);
+      color: var(--light);
       margin-bottom: 8px;
       font-size: 0.95rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .form-control {
       width: 100%;
       padding: 16px 20px;
       border-radius: var(--border-radius);
-      border: 1px solid rgba(30, 45, 89, 0.2);
-      background-color: var(--light);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.95);
+      color: var(--text-dark);
       font-family: var(--font-primary);
       font-size: 1rem;
       outline: none;
@@ -82,8 +93,9 @@
     }
     
     .form-control:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(166, 31, 94, 0.1);
+      border-color: var(--light);
+      background-color: var(--light);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
     }
     
     textarea.form-control {
@@ -162,9 +174,6 @@
     <div class="container" style="padding: 40px 0 20px;">
       <h1 class="section-title text-white" style="font-size: 3rem; margin-bottom: 10px;">Contacto</h1>
       <div class="title-underline bg-white" style="margin: 0 auto 20px;"></div>
-      <p class="text-white" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
-        ¿Tenés alguna consulta o sugerencia? Envianos un mensaje y te responderemos a la brevedad.
-      </p>
     </div>
   </section>
 
