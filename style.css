@@ -1342,201 +1342,101 @@ img {
 /* 12. Gallery Section */
 .gallery-section {
   background-color: var(--bg-cream);
+  padding-bottom: 0; /* Let full-bleed gallery hit near the bottom or have custom padding */
 }
 
 .gallery-carousel-wrapper {
   position: relative;
-  max-width: 900px;
-  margin: 50px auto 0;
-  padding: 0;
-}
-
-.carousel-track-container {
-  overflow: hidden;
   width: 100%;
-  height: 520px;
-  position: relative;
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
+  margin-top: 50px;
+  overflow: hidden;
 }
 
-.carousel-track {
+.gallery-carousel-track-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+}
+
+.gallery-carousel-track-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.gallery-carousel-track {
   display: flex;
-  height: 100%;
-  width: 100%;
-  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  gap: 0; /* No gaps as requested by user */
 }
 
-.carousel-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
+.gallery-carousel-item {
+  flex: 0 0 50%; /* 2 items visible on mobile by default */
+  height: 420px; /* Tall portrait ratio */
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-.carousel-img {
+.gallery-carousel-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.carousel-slide:hover .carousel-img {
-  transform: scale(1.05);
+.gallery-carousel-item:hover .gallery-carousel-img {
+  transform: scale(1.06);
 }
 
-.carousel-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(13, 13, 13, 0.85) 0%, rgba(13, 13, 13, 0.2) 50%, rgba(13, 13, 13, 0) 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: 40px;
-  box-sizing: border-box;
-  opacity: 1;
-  transition: background 0.3s ease;
-}
-
-.carousel-caption {
-  color: var(--light);
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  transform: translateY(0);
-  transition: transform 0.4s ease;
-  line-height: 1.4;
-}
-
-/* Glassmorphism navigation buttons */
-.carousel-btn {
+/* Controls */
+.carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background-color: rgba(13, 13, 13, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  color: var(--light);
-  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 18px rgba(166, 31, 94, 0.4);
-}
-
-.carousel-btn:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.prev-btn {
-  left: 20px;
-}
-
-.next-btn {
-  right: 20px;
-}
-
-/* Indicators */
-.carousel-dots {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 10;
-  display: flex;
-  gap: 12px;
-  background-color: rgba(13, 13, 13, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.dot-btn {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
+.carousel-control:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(230, 20, 80, 0.25);
 }
 
-.dot-btn:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.carousel-control.prev {
+  left: 24px;
 }
 
-.dot-btn.active {
-  background-color: var(--primary);
-  transform: scale(1.25);
-  box-shadow: 0 0 8px var(--primary);
+.carousel-control.next {
+  right: 24px;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  .carousel-track-container {
-    height: 380px;
-    border-radius: 12px;
-  }
-  .carousel-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-  .prev-btn {
-    left: 12px;
-  }
-  .next-btn {
-    right: 12px;
-  }
-  .carousel-overlay {
-    padding: 25px;
-  }
-  .carousel-caption {
-    font-size: 1.1rem;
-  }
-  .carousel-dots {
-    bottom: 15px;
-    gap: 8px;
-    padding: 6px 12px;
-  }
-  .dot-btn {
-    width: 8px;
-    height: 8px;
+@media (min-width: 768px) {
+  .gallery-carousel-item {
+    flex: 0 0 33.333%; /* 3 items visible on tablet */
+    height: 480px;
   }
 }
 
-@media (max-width: 480px) {
-  .carousel-track-container {
-    height: 280px;
-  }
-  .carousel-caption {
-    font-size: 0.95rem;
+@media (min-width: 1024px) {
+  .gallery-carousel-item {
+    flex: 0 0 20%; /* 5 items visible on desktop (fills exactly 100% since we have 5 items in a loop set) */
+    height: 520px;
   }
 }
-
 
 /* 13. Press / News (Light Blue Block) */
 .press-section {
@@ -2525,15 +2425,7 @@ img {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .gallery-mosaic {
-    grid-template-columns: 1fr;
-  }
-  
-  .gallery-item {
-    height: 280px;
-  }
-  
+    
   .press-grid {
     grid-template-columns: 1fr;
     max-width: 450px;
