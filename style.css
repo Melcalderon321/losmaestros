@@ -828,7 +828,7 @@ img {
 
 .promo-card {
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -846,6 +846,14 @@ img {
 
 .promo-card.card-red {
   background-color: #D92525;
+}
+
+.card-red .promo-custom-img-wrap {
+  width: 185px;
+  height: 185px;
+  margin-right: -25px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
 .promo-card.card-orange {
