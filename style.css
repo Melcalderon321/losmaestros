@@ -796,7 +796,7 @@ img {
 
 /* 8. Promotions Block (Green) */
 .promos-section {
-  background-color: var(--green);
+  background-color: #000000;
   color: var(--light);
   position: relative;
   overflow: hidden;
@@ -810,7 +810,7 @@ img {
   right: -150px;
   width: 400px;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.02);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -818,83 +818,113 @@ img {
 .promos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 24px;
   margin-top: 50px;
 }
 
 .promo-card {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--border-radius-lg);
+  border-radius: 10px;
   overflow: hidden;
-  backdrop-filter: blur(5px);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  min-height: 190px;
   transition: var(--transition);
+  border: none;
+  position: relative;
 }
 
 .promo-card:hover {
   transform: translateY(-8px);
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--light);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-.promo-day {
-  background-color: var(--primary);
+.promo-card.card-red {
+  background-color: #D92525;
+}
+
+.promo-card.card-orange {
+  background-color: #FF9F1C;
+}
+
+.promo-card.card-green {
+  background-color: #1A8F5C;
+}
+
+.promo-custom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1.2;
+  z-index: 2;
+}
+
+.promo-custom-tag {
+  font-size: 1.5rem;
+  font-weight: 800;
   color: var(--light);
-  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.promo-custom-title {
   font-size: 0.9rem;
-  padding: 10px;
-  text-align: center;
-  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  min-height: 48px; /* ensures consistent alignment */
 }
 
-.promo-img-wrapper {
-  height: 180px;
+.promo-custom-btn {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--light);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--light);
+  padding-bottom: 2px;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.promo-card:hover .promo-custom-btn {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.promo-custom-img-wrap {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
   overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+  transition: var(--transition);
 }
 
-.promo-img {
+.promo-card:hover .promo-custom-img-wrap {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.promo-custom-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.promo-card:hover .promo-img {
-  transform: scale(1.08);
-}
-
-.promo-content {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.promo-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 12px;
-  color: #ffc107; /* Golden Accent */
-}
-
-.promo-desc {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-
-.promo-content .btn {
-  margin-top: auto;
 }
 
 .promos-legal {
   margin-top: 40px;
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.4);
 }
 
 /* 9. Institutional / History Section */
