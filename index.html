@@ -347,30 +347,31 @@
           </div>
         </div>
 
-        <!-- Card 4: Jamón y morrones -->
+        <!-- Card 4: Jamón -->
         <div class="product-card" id="card-jamon">
           <div class="product-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1594007654729-407ededc49c8?auto=format&fit=crop&w=800&q=80" alt="Pizza Jamón y morrones" class="product-img">
+            <img src="jamon.jpg" alt="Pizza Jamón" class="product-img">
           </div>
           <div class="product-info">
-            <h3 class="product-name">Jamón y morrones</h3>
-            <p class="product-ingredients">Nuestra base clásica de salsa de tomate y muzzarella, cubierta con jamón cocido seleccionado y morrones asados en tiras.</p>
+            <h3 class="product-name">Jamón</h3>
+            <p class="product-ingredients">Salsa de tomate, muzzarella, jamón y aceitunas.</p>
             
             <div class="product-options">
               <span class="option-label">Tamaño:</span>
               <div class="size-selector">
-                <button class="size-btn active" data-size="chica" data-price="5300" onclick="selectSize(this, 'jamon')">Chica</button>
-                <button class="size-btn" data-size="mediana" data-price="7900" onclick="selectSize(this, 'jamon')">Mediana</button>
-                <button class="size-btn" data-size="grande" data-price="9800" onclick="selectSize(this, 'jamon')">Grande</button>
+                <button class="size-btn" data-size="porción" data-price="4000" onclick="selectSize(this, 'jamon')">Porción</button>
+                <button class="size-btn" data-size="individual" data-price="11100" onclick="selectSize(this, 'jamon')">Individual</button>
+                <button class="size-btn" data-size="mediana" data-price="22100" onclick="selectSize(this, 'jamon')">Mediana</button>
+                <button class="size-btn active" data-size="grande" data-price="27800" onclick="selectSize(this, 'jamon')">Grande</button>
               </div>
             </div>
 
             <div class="product-footer">
               <div class="product-price">
                 <span class="currency">$</span>
-                <span class="price-val" id="price-jamon">9800</span>
+                <span class="price-val" id="price-jamon">27800</span>
               </div>
-              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón y morrones', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
+              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
             </div>
           </div>
         </div>
