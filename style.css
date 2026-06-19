@@ -861,11 +861,11 @@ img {
 }
 
 .card-orange .promo-custom-img-wrap {
-  width: 155px;
-  height: 155px;
-  margin-right: 0px;
-  margin-top: -5px;
-  margin-bottom: -5px;
+  width: 165px;
+  height: 165px;
+  margin-right: -5px;
+  margin-top: -8px;
+  margin-bottom: -8px;
 }
 
 .promo-card.card-green {
