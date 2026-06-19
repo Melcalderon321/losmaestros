@@ -851,7 +851,7 @@ img {
 .card-red .promo-custom-img-wrap {
   width: 155px;
   height: 155px;
-  margin-right: -10px;
+  margin-right: 0px;
   margin-top: -5px;
   margin-bottom: -5px;
 }
