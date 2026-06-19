@@ -797,6 +797,10 @@ img {
 /* 8. Promotions Block (Green) */
 .promos-section {
   background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), url('promos-bg-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--light);
   position: relative;
   overflow: hidden;
