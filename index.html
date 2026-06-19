@@ -556,6 +556,7 @@
         <p class="section-subtitle">Sorprendete con las variedades que podés elegir.</p>
         <div class="title-underline"></div>
       </div>
+    </div>
     <!-- Carousel Gallery (Full-width) -->
     <div class="gallery-carousel-wrapper">
       <button class="carousel-control prev" id="galleryPrevBtn" aria-label="Anterior">
@@ -589,8 +590,14 @@
     </div>
   </section>
 
-  <!-- Press / News Section (Light Blue Block) -->
+  <!-- Press / News Section (Light Blue Block => Now matching Intro Block) -->
   <section class="press-section">
+    <!-- Decorative background patterns -->
+    <img src="vector-6.png" class="bg-pattern pattern-1" alt="">
+    <img src="vector-7.png" class="bg-pattern pattern-2" alt="">
+    <img src="vector-8.png" class="bg-pattern pattern-3" alt="">
+    <img src="vector-10.png" class="bg-pattern pattern-4" alt="">
+    <img src="vector-11.png" class="bg-pattern pattern-5" alt="">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title">NOTICIAS y mucho más...</h2>
@@ -599,75 +606,54 @@
 
       <div class="press-grid">
         <!-- Video 1 -->
-        <div class="press-card" onclick="openVideoModal('Entrevista a dueños de Los Maestros', 'El diario de turismo')">
+        <div class="press-card" onclick="openVideoModal('Entrevista a Gustavo Levinson Pizzería Los Maestros.', 'El diario de turismo')">
           <div class="video-thumb-wrapper">
             <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=500&q=80" alt="El diario de turismo" class="video-thumb">
             <div class="play-overlay">
               <i class="fa-solid fa-circle-play"></i>
             </div>
-            <span class="press-badge">El diario de turismo</span>
+            <span class="press-badge">Video</span>
           </div>
           <div class="press-content">
-            <h3 class="press-card-title">Entrevista a dueños de Los Maestros.</h3>
-            <p class="press-card-desc">Conocé la historia contada en primera persona por los fundadores de la emblemática marca de pizzas porteña.</p>
+            <h3 class="press-card-title">Entrevista a Gustavo Levinson Pizzería Los Maestros.</h3>
           </div>
         </div>
 
         <!-- Video 2 -->
-        <div class="press-card" onclick="openVideoModal('El secreto de la masa madurada', 'Los Maestros TV')">
+        <div class="press-card" onclick="openVideoModal('Día del pizzero los maestro canal9 noche.', 'Los Maestros TV')">
           <div class="video-thumb-wrapper">
             <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Masa madurada" class="video-thumb">
             <div class="play-overlay">
               <i class="fa-solid fa-circle-play"></i>
             </div>
-            <span class="press-badge">Receta de la casa</span>
+            <span class="press-badge">Video</span>
           </div>
           <div class="press-content">
-            <h3 class="press-card-title">El secreto de la masa madurada.</h3>
-            <p class="press-card-desc">Un recorrido visual por el proceso de fermentación lenta de 48 horas que le da esa textura única e inigualable.</p>
+            <h3 class="press-card-title">Día del pizzero los maestro canal9 noche.</h3>
           </div>
         </div>
 
         <!-- Video 3 -->
-        <div class="press-card" onclick="openVideoModal('Conocé a los artistas de la pizza en Argentina', 'Gourmet Club')">
+        <div class="press-card" onclick="openVideoModal('El maestro pizzero más antiguo de Bs As - Día del Pizzero en Argentina.', 'Video')">
           <div class="video-thumb-wrapper">
             <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=500&q=80" alt="Artistas de la pizza" class="video-thumb">
             <div class="play-overlay">
               <i class="fa-solid fa-circle-play"></i>
             </div>
-            <span class="press-badge">Gourmet Club</span>
+            <span class="press-badge">Video</span>
           </div>
           <div class="press-content">
-            <h3 class="press-card-title">Conocé a los artistas de la pizza en Argentina.</h3>
-            <p class="press-card-desc">Informe especial sobre los maestros pizzeros más importantes del país y el rol histórico de nuestra cocina.</p>
+            <h3 class="press-card-title">El maestro pizzero más antiguo de Bs As - Día del Pizzero en Argentina.</h3>
           </div>
         </div>
-      </div>
-
-      <!-- Video 4 - Centered below grid -->
-      <div class="press-centered-row">
-        <div class="press-card large-video-card" onclick="openVideoModal('Nota de prensa de Los Maestros en formato video', 'Especial de Domingo')">
-          <div class="video-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1460889687773-43c7b73fac88?auto=format&fit=crop&w=800&q=80" alt="Prensa Video" class="video-thumb">
-            <div class="play-overlay">
-              <i class="fa-solid fa-circle-play"></i>
-            </div>
-            <span class="press-badge">Especial Domingo</span>
-          </div>
-          <div class="press-content text-center">
-            <h3 class="press-card-title">Nota de prensa en formato video.</h3>
-            <p class="press-card-desc">Documental corto sobre el impacto de la pizza porteña en la cultura urbana contemporánea.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Newsletter & Footer -->
   <section class="newsletter-section">
     <div class="container text-center">
-      <h2 class="newsletter-title">Enterate de todo antes que nadie.</h2>
-      <p class="newsletter-desc">Suscribite para recibir nuestras promociones exclusivas, nuevos lanzamientos y recetas secretas.</p>
+      <h2 class="newsletter-title">Suscribite y obtené beneficios exclusivos.</h2>
+
       <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
         <input type="email" id="emailInput" class="newsletter-input" placeholder="Ingresá tu dirección de correo electrónico" required>
         <button type="submit" class="btn btn-primary">Suscribirse</button>
@@ -679,51 +665,74 @@
   <footer class="main-footer" id="contacto">
     <div class="container">
       <div class="footer-grid">
-        <!-- Col 1: Logo alternative version -->
+        <!-- Col 1: Logo & Redes Sociales -->
         <div class="footer-col col-logo">
-          <div class="logo-alt">
-            <span class="logo-circle-alt">LM</span>
-            <div class="logo-title-wrap">
-              <h4>Los Maestros</h4>
-              <span>Pizzería Tradicional</span>
+          <div class="footer-logo-wrap" style="margin-bottom: 20px;">
+            <img src="logo-nav.png" alt="Los Maestros" style="max-height: 80px; width: auto;">
+          </div>
+          <div style="margin-top: 10px;">
+            <h4 class="footer-title" style="margin-bottom: 15px; font-size: 1rem;">Redes Sociales (Seguinos)</h4>
+            <div style="display: flex; gap: 12px;">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-link">
+                <i class="fa-brands fa-facebook-f" style="color: #FFC107;"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link">
+                <i class="fa-brands fa-instagram" style="color: #FFC107;"></i>
+              </a>
             </div>
           </div>
-          <p class="footer-about">Llevamos el sabor único y la tradición artesanal de la pizza de molde a tu mesa desde hace más de 30 años.</p>
-          <div class="social-icons">
-            <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          </div>
         </div>
 
-        <!-- Col 2: Sucursales links -->
+        <!-- Col 2: Sucursales Table -->
         <div class="footer-col">
           <h4 class="footer-title">Sucursales</h4>
-          <ul class="footer-links">
-            <li><a href="#sucursales">Recoleta (Paraná 1243)</a></li>
-            <li><a href="#sucursales">Barrio Norte (Ancon 5432)</a></li>
-            <li><a href="#sucursales">Palermo (Delivery)</a></li>
-          </ul>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; white-space: nowrap;">
+
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">Recoleta</td>
+                  <td style="padding: 12px 5px;">Paraná 1249</td>
+                  <td style="padding: 12px 5px;">4815-4430</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 12px 5px; color: #FFC107;">B. Norte</td>
+                  <td style="padding: 12px 5px;">Uriburu 1305</td>
+                  <td style="padding: 12px 5px;">4821-4658</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 5px; color: #FFC107;">Palermo</td>
+                  <td style="padding: 12px 5px;">Solo delivery</td>
+                  <td style="padding: 12px 5px;">4800-1112</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.8);"><i class="fa-regular fa-clock" style="color: #FFC107; margin-right: 5px;"></i> <strong>Horario de atención:</strong> Todos los días de 7 h a 24 h.</p>
         </div>
 
-        <!-- Col 3: Teléfonos -->
+        <!-- Col 3: Métodos de Pago -->
         <div class="footer-col">
-          <h4 class="footer-title">Teléfonos</h4>
-          <ul class="footer-phones">
-            <li><a href="tel:+541148110000"><i class="fa-solid fa-phone"></i> Recoleta: 4811-0000</a></li>
-            <li><a href="tel:+541147770000"><i class="fa-solid fa-phone"></i> Barrio Norte: 4777-0000</a></li>
-            <li><a href="tel:+541149990000"><i class="fa-solid fa-phone"></i> Palermo Delivery: 4999-0000</a></li>
+          <h4 class="footer-title">Métodos de Pago</h4>
+          <ul class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-money-bill" style="color: #FFC107;"></i> Efectivo
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-credit-card" style="color: #FFC107;"></i> Crédito / Débito
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-mobile-screen" style="color: #FFC107;"></i> Mercado Pago
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p class="copyright">&copy; 2026 Los Maestros Pizzería. Todos los derechos reservados.</p>
-        <div class="footer-bottom-links">
-          <a href="#" onclick="alert('Políticas de Privacidad de Los Maestros')">Políticas de Privacidad</a>
-          <span class="divider">|</span>
-          <a href="#" onclick="alert('Defensa del Consumidor - Enlace oficial')">Defensa del Consumidor</a>
-        </div>
+      <div class="footer-bottom" style="text-align: center; justify-content: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Agencia de Marketing Digital en Argentina</span>
       </div>
+
+
     </div>
   </footer>
 
