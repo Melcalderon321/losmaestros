@@ -849,11 +849,11 @@ img {
 }
 
 .card-red .promo-custom-img-wrap {
-  width: 185px;
-  height: 185px;
-  margin-right: -25px;
-  margin-top: -10px;
-  margin-bottom: -10px;
+  width: 155px;
+  height: 155px;
+  margin-right: -10px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .promo-card.card-orange {
