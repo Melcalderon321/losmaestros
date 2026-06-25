@@ -212,3 +212,22 @@ function initNewsletter() {
     });
   }
 }
+
+// 8. Select Size Column and update buy button dynamically
+function selectCardSize(colElement, cardId) {
+  const container = colElement.parentElement;
+  const cols = container.querySelectorAll('.size-col');
+  
+  // Toggle active class on columns
+  cols.forEach(col => col.classList.remove('active'));
+  colElement.classList.add('active');
+  
+  // Update Buy Button argument dynamically
+  const sizeSelected = colElement.getAttribute('data-size');
+  const cardElement = document.getElementById(`card-${cardId}`);
+  if (cardElement) {
+    const buyBtn = cardElement.querySelector('.btn-buy');
+    const productName = cardElement.querySelector('.product-name').textContent;
+    buyBtn.setAttribute('onclick', `addToCart('${productName}', '${sizeSelected}')`);
+  }
+}

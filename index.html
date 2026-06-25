@@ -6,16 +6,16 @@
   <meta name="description" content="Los Maestros - Tradición y sabor en Buenos Aires. Disfrutá de la mejor pizza artesanal de molde y a la piedra. Sucursales en Recoleta, Barrio Norte y Palermo.">
   <title>Los Maestros - Pizzería en Buenos Aires</title>
   
-  <!-- Google Fonts - Rubik -->
+  <!-- Google Fonts - Lora & Rubik -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=132">
 </head>
 <body>
 
@@ -83,7 +83,7 @@
                 10% OFF
               </div>
               <div class="slide-center">
-                <h2 class="slide-lg-title">TAKE AWAY</h2>
+                <h2 class="slide-lg-title lora-bold-accent">Take Away</h2>
                 <span class="slide-tag-white">PAGO EN EFECTIVO</span>
                 <p class="slide-desc-xs">Mínimo $18.000 • Exclusivo sucursal Recoleta y B. Norte</p>
               </div>
@@ -100,7 +100,7 @@
                 <img src="empanada-icon.png" alt="Empanada" class="empanada-slide-img">
               </div>
               <div class="slide-center">
-                <h2 class="slide-lg-title">Llevá 14 empanadas</h2>
+                <h2 class="slide-lg-title lora-bold-accent">Llevá 14 empanadas</h2>
                 <h2 class="slide-xl-title-accent">PAGÁS SOLO 12</h2>
                 <p class="slide-desc-xs">*Exclusivo para take away abonando en efectivo.</p>
               </div>
@@ -210,8 +210,8 @@
 
     <div class="container">
       <div class="intro-header text-center">
-        <h2 class="section-title-large">LOS MAESTROS</h2>
-        <h3 class="section-subtitle-large">PIZZERÍA EN BUENOS AIRES</h3>
+        <img src="logo-nav.png" alt="Los Maestros" class="intro-logo-img">
+        <h2 class="section-title">Pizzería en Buenos Aires</h2>
         <p class="section-subtitle">Tenemos memoria italiana y sabor bien Argentino.</p>
       </div>
 
@@ -228,28 +228,28 @@
         <!-- Category items -->
         <div class="category-card active" data-category="pizzas">
           <div class="category-img-wrap">
-            <img src="pizza-category-new.png" alt="Pizzas" class="category-img">
+            <img src="muzzarellacon huevo duro picado.jpg" alt="Pizzas" class="category-img">
           </div>
           <span class="category-name">Pizzas</span>
         </div>
 
         <div class="category-card" data-category="empanadas">
           <div class="category-img-wrap">
-            <img src="empanadas-category-new.png" alt="Empanadas" class="category-img">
+            <img src="empanadas5.jpg" alt="Empanadas" class="category-img">
           </div>
           <span class="category-name">Empanadas</span>
         </div>
 
         <div class="category-card" data-category="tartas">
           <div class="category-img-wrap">
-            <img src="tarta-category-new.png" alt="Tartas" class="category-img">
+            <img src="tarta.jpeg" alt="Tartas" class="category-img">
           </div>
           <span class="category-name">Tartas</span>
         </div>
 
         <div class="category-card" data-category="bebidas">
           <div class="category-img-wrap">
-            <img src="bebidas-category-new.png" alt="Bebidas" class="category-img">
+            <img src="hand-holding-glass-red-wine-with-bottle-social-setting.jpg" alt="Bebidas" class="category-img">
           </div>
           <span class="category-name">Bebidas</span>
         </div>
@@ -271,27 +271,30 @@
           <div class="product-img-wrapper">
             <img src="25-aniversario.jpg" alt="Pizza 25 Aniversario" class="product-img">
           </div>
-          <div class="product-info">
+                              <div class="product-info">
             <h3 class="product-name">25 Aniversario</h3>
             <p class="product-ingredients">Salsa de tomate, muzzarella, champignon al ajillo, rúcula y parmesano con aceitunas negras.</p>
             
-            <div class="product-options">
-              <span class="option-label">Tamaño:</span>
-              <div class="size-selector">
-                <button class="size-btn" data-size="porción" data-price="6200" onclick="selectSize(this, 'aniversario')">Porción</button>
-                <button class="size-btn" data-size="individual" data-price="13500" onclick="selectSize(this, 'aniversario')">Individual</button>
-                <button class="size-btn" data-size="mediana" data-price="27400" onclick="selectSize(this, 'aniversario')">Mediana</button>
-                <button class="size-btn active" data-size="grande" data-price="34200" onclick="selectSize(this, 'aniversario')">Grande</button>
+            <div class="product-sizes-table">
+              <div class="size-col" data-size="grande" data-price="34200">
+                <span class="size-name">Grande</span>
+                <span class="size-price">$34200</span>
+              </div>
+              <div class="size-col" data-size="mediana" data-price="27400">
+                <span class="size-name">Mediana</span>
+                <span class="size-price">$27400</span>
+              </div>
+              <div class="size-col" data-size="individual" data-price="13500">
+                <span class="size-name">Indiv.</span>
+                <span class="size-price">$13500</span>
+              </div>
+              <div class="size-col" data-size="porción" data-price="6200">
+                <span class="size-name">Porción</span>
+                <span class="size-price">$6200</span>
               </div>
             </div>
 
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="currency">$</span>
-                <span class="price-val" id="price-aniversario">34200</span>
-              </div>
-              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('25 Aniversario', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
-            </div>
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 5px;"><a href="#productos" class="btn btn-primary"><i class="fa-solid fa-pizza-slice"></i> Pedir online</a></div>
           </div>
         </div>
 
@@ -300,27 +303,30 @@
           <div class="product-img-wrapper">
             <img src="al-verdeo.jpg" alt="Pizza Al Verdeo" class="product-img">
           </div>
-          <div class="product-info">
+                              <div class="product-info">
             <h3 class="product-name">Al Verdeo</h3>
             <p class="product-ingredients">Salsa de tomate, queso cremoso y cebolla de verdeo picada.</p>
             
-            <div class="product-options">
-              <span class="option-label">Tamaño:</span>
-              <div class="size-selector">
-                <button class="size-btn" data-size="porción" data-price="4800" onclick="selectSize(this, 'verdeo')">Porción</button>
-                <button class="size-btn" data-size="individual" data-price="11000" onclick="selectSize(this, 'verdeo')">Individual</button>
-                <button class="size-btn" data-size="mediana" data-price="23300" onclick="selectSize(this, 'verdeo')">Mediana</button>
-                <button class="size-btn active" data-size="grande" data-price="28100" onclick="selectSize(this, 'verdeo')">Grande</button>
+            <div class="product-sizes-table">
+              <div class="size-col" data-size="grande" data-price="28100">
+                <span class="size-name">Grande</span>
+                <span class="size-price">$28100</span>
+              </div>
+              <div class="size-col" data-size="mediana" data-price="23300">
+                <span class="size-name">Mediana</span>
+                <span class="size-price">$23300</span>
+              </div>
+              <div class="size-col" data-size="individual" data-price="11000">
+                <span class="size-name">Indiv.</span>
+                <span class="size-price">$11000</span>
+              </div>
+              <div class="size-col" data-size="porción" data-price="4800">
+                <span class="size-name">Porción</span>
+                <span class="size-price">$4800</span>
               </div>
             </div>
 
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="currency">$</span>
-                <span class="price-val" id="price-verdeo">28100</span>
-              </div>
-              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Al Verdeo', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
-            </div>
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 5px;"><a href="#productos" class="btn btn-primary"><i class="fa-solid fa-pizza-slice"></i> Pedir online</a></div>
           </div>
         </div>
 
@@ -329,27 +335,30 @@
           <div class="product-img-wrapper">
             <img src="roquefort.jpg" alt="Pizza Roquefort" class="product-img">
           </div>
-          <div class="product-info">
+                              <div class="product-info">
             <h3 class="product-name">Roquefort</h3>
             <p class="product-ingredients">Salsa de tomate, queso roquefort, morrones, huevo duro y aceitunas negras.</p>
             
-            <div class="product-options">
-              <span class="option-label">Tamaño:</span>
-              <div class="size-selector">
-                <button class="size-btn" data-size="porción" data-price="5700" onclick="selectSize(this, 'roquefort')">Porción</button>
-                <button class="size-btn" data-size="individual" data-price="12400" onclick="selectSize(this, 'roquefort')">Individual</button>
-                <button class="size-btn" data-size="mediana" data-price="25400" onclick="selectSize(this, 'roquefort')">Mediana</button>
-                <button class="size-btn active" data-size="grande" data-price="32800" onclick="selectSize(this, 'roquefort')">Grande</button>
+            <div class="product-sizes-table">
+              <div class="size-col" data-size="grande" data-price="32800">
+                <span class="size-name">Grande</span>
+                <span class="size-price">$32800</span>
+              </div>
+              <div class="size-col" data-size="mediana" data-price="25400">
+                <span class="size-name">Mediana</span>
+                <span class="size-price">$25400</span>
+              </div>
+              <div class="size-col" data-size="individual" data-price="12400">
+                <span class="size-name">Indiv.</span>
+                <span class="size-price">$12400</span>
+              </div>
+              <div class="size-col" data-size="porción" data-price="5700">
+                <span class="size-name">Porción</span>
+                <span class="size-price">$5700</span>
               </div>
             </div>
 
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="currency">$</span>
-                <span class="price-val" id="price-roquefort">32800</span>
-              </div>
-              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Roquefort', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
-            </div>
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 5px;"><a href="#productos" class="btn btn-primary"><i class="fa-solid fa-pizza-slice"></i> Pedir online</a></div>
           </div>
         </div>
 
@@ -358,27 +367,30 @@
           <div class="product-img-wrapper">
             <img src="jamon.jpg" alt="Pizza Jamón" class="product-img">
           </div>
-          <div class="product-info">
+                              <div class="product-info">
             <h3 class="product-name">Jamón</h3>
             <p class="product-ingredients">Salsa de tomate, muzzarella, jamón y aceitunas.</p>
             
-            <div class="product-options">
-              <span class="option-label">Tamaño:</span>
-              <div class="size-selector">
-                <button class="size-btn" data-size="porción" data-price="4000" onclick="selectSize(this, 'jamon')">Porción</button>
-                <button class="size-btn" data-size="individual" data-price="11100" onclick="selectSize(this, 'jamon')">Individual</button>
-                <button class="size-btn" data-size="mediana" data-price="22100" onclick="selectSize(this, 'jamon')">Mediana</button>
-                <button class="size-btn active" data-size="grande" data-price="27800" onclick="selectSize(this, 'jamon')">Grande</button>
+            <div class="product-sizes-table">
+              <div class="size-col" data-size="grande" data-price="27800">
+                <span class="size-name">Grande</span>
+                <span class="size-price">$27800</span>
+              </div>
+              <div class="size-col" data-size="mediana" data-price="22100">
+                <span class="size-name">Mediana</span>
+                <span class="size-price">$22100</span>
+              </div>
+              <div class="size-col" data-size="individual" data-price="11100">
+                <span class="size-name">Indiv.</span>
+                <span class="size-price">$11100</span>
+              </div>
+              <div class="size-col" data-size="porción" data-price="4000">
+                <span class="size-name">Porción</span>
+                <span class="size-price">$4000</span>
               </div>
             </div>
 
-            <div class="product-footer">
-              <div class="product-price">
-                <span class="currency">$</span>
-                <span class="price-val" id="price-jamon">27800</span>
-              </div>
-              <button class="btn btn-primary btn-sm btn-buy" onclick="addToCart('Jamón', 'grande')"><i class="fa-solid fa-cart-shopping"></i> Comprar</button>
-            </div>
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 5px;"><a href="#productos" class="btn btn-primary"><i class="fa-solid fa-pizza-slice"></i> Pedir online</a></div>
           </div>
         </div>
       </div>
@@ -398,47 +410,30 @@
       </div>
 
       <div class="promos-grid">
-        <!-- Promo 1: Lunes (Red) -->
-        <div class="promo-card card-red">
-          <!-- Decorative basil leaves -->
-          <img src="basil-leaf-1.png" alt="" class="promo-deco-leaf leaf-pos-1">
-          <img src="basil-leaf-2.png" alt="" class="promo-deco-leaf leaf-pos-2">
-          
-          <div class="promo-custom-content">
+        <!-- Promo 1: Lunes (Photo Cover) -->
+        <div class="promo-card promo-lunes-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Lunes</span>
-            <p class="promo-custom-title">Pedí una pizza chica <br>y ¡llevate una grande!</p>
+            <p class="promo-zocalo-title">Pedí una pizza chica y ¡llevate una grande!</p>
             <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="lunes-pizza.png" alt="Promo Lunes" class="promo-custom-img">
           </div>
         </div>
 
-        <!-- Promo 2: Martes (Orange) -->
-        <div class="promo-card card-orange">
-          <div class="promo-custom-content">
+        <!-- Promo 2: Martes (Photo Cover) -->
+        <div class="promo-card promo-martes-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Martes</span>
-            <p class="promo-custom-title">Pedí 4 empanadas <br>y pagá 3.</p>
+            <p class="promo-zocalo-title">Pedí 4 empanadas y pagá 3.</p>
             <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="martes-empanadas.png" alt="Promo Martes" class="promo-custom-img">
           </div>
         </div>
 
-        <!-- Promo 3: Miércoles (Green) -->
-        <div class="promo-card card-green">
-          <!-- Decorative tomatoes on the left -->
-          <img src="tomato-1.png" alt="" class="promo-deco-leaf tomato-pos-1">
-          <img src="tomato-2.png" alt="" class="promo-deco-leaf tomato-pos-2">
-
-          <div class="promo-custom-content">
+        <!-- Promo 3: Miércoles (Photo Cover) -->
+        <div class="promo-card promo-miercoles-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Miércoles</span>
-            <p class="promo-custom-title">Comprá 1 pizza grande <br>y llevá 3 porciones de fainá de regalo.</p>
+            <p class="promo-zocalo-title">Pizza grande y 3 fainás de regalo</p>
             <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="miercoles-pizza.png" alt="Promo Miércoles" class="promo-custom-img">
           </div>
         </div>
       </div>
@@ -493,10 +488,11 @@
       <div class="branches-grid">
         <!-- Recoleta -->
         <div class="branch-card">
+          <div class="pattern-mantel-card"></div>
           <div class="branch-icon-header">
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
-          <h3 class="branch-name">RECOLETA</h3>
+          <h3 class="branch-name">Recoleta</h3>
           <p class="branch-address"><i class="fa-solid fa-location-dot"></i> Paraná 1243, CABA</p>
           <div class="branch-buttons">
             <a href="tel:+541148110000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
@@ -506,10 +502,11 @@
 
         <!-- Barrio Norte -->
         <div class="branch-card">
+          <div class="pattern-mantel-card"></div>
           <div class="branch-icon-header">
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
-          <h3 class="branch-name">BARRIO NORTE</h3>
+          <h3 class="branch-name">Barrio Norte</h3>
           <p class="branch-address"><i class="fa-solid fa-location-dot"></i> Ancon 5432, CABA</p>
           <div class="branch-buttons">
             <a href="tel:+541147770000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
@@ -519,10 +516,11 @@
 
         <!-- Palermo -->
         <div class="branch-card">
+          <div class="pattern-mantel-card"></div>
           <div class="branch-icon-header">
             <i class="fa-solid fa-motorcycle"></i>
           </div>
-          <h3 class="branch-name">PALERMO</h3>
+          <h3 class="branch-name">Palermo</h3>
           <p class="branch-address"><i class="fa-solid fa-phone"></i> Delivery</p>
           <div class="branch-buttons">
             <a href="tel:+541149990000" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> ¡Llamá al local!</a>
@@ -666,6 +664,9 @@
       </form>
     </div>
   </section>
+
+  <!-- Decorative tablecloth divider -->
+  <div class="pattern-mantel-divider"></div>
 
   <!-- Main Footer -->
   <footer class="main-footer" id="contacto">

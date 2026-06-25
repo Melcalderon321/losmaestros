@@ -15,8 +15,8 @@
   --green-hover: #01422F;
   --dark: #0D0D0D;
   --light: #FFFFFF;
-  --bg-cream: #FAF6F0;
-  --bg-cream-dark: #F3ECE2;
+  --bg-cream: #FAFAFA;
+  --bg-cream-dark: #F3F3F3;
   --text-dark: #222222;
   --text-muted: #666666;
   --font-primary: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -187,15 +187,17 @@ img {
   font-weight: 700;
   color: var(--secondary);
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .section-subtitle {
+  font-family: 'Lora', Georgia, serif;
   font-size: 1.25rem;
   color: var(--text-muted);
-  font-weight: 400;
+  font-weight: 600;
+  font-style: italic;
   line-height: 1.5;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .title-underline {
@@ -318,9 +320,11 @@ img {
   min-height: 600px;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: center;
   color: var(--light);
   padding-top: 80px;
+  padding-bottom: 50px;
 }
 
 .hero-bg-container {
@@ -344,11 +348,34 @@ img {
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
+  transform-origin: center center;
 }
 
 .hero-bg-slide.active {
   opacity: 1;
   z-index: 2;
+  animation: kenBurns1 8s ease-in-out forwards;
+}
+
+.hero-bg-slide.active:nth-child(2) { animation-name: kenBurns2; }
+.hero-bg-slide.active:nth-child(3) { animation-name: kenBurns3; }
+.hero-bg-slide.active:nth-child(4) { animation-name: kenBurns4; }
+
+@keyframes kenBurns1 {
+  0%   { transform: scale(1.08) translate(0%, 0%); }
+  100% { transform: scale(1.16) translate(-1.5%, -1%); }
+}
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.16) translate(-1.5%, 0%); }
+  100% { transform: scale(1.08) translate(0%, -1%); }
+}
+@keyframes kenBurns3 {
+  0%   { transform: scale(1.08) translate(1.5%, -1%); }
+  100% { transform: scale(1.16) translate(0%, 0%); }
+}
+@keyframes kenBurns4 {
+  0%   { transform: scale(1.16) translate(0%, 1%); }
+  100% { transform: scale(1.08) translate(-1%, 0%); }
 }
 
 .hero-overlay {
@@ -357,7 +384,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(13, 13, 13, 0.85) 40%, rgba(13, 13, 13, 0.3) 100%);
+  background: linear-gradient(to right, rgba(13, 13, 13, 0.22) 40%, rgba(13, 13, 13, 0.02) 100%);
   z-index: 5;
 }
 
@@ -367,6 +394,9 @@ img {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Custom Slide Content Animations */
@@ -584,6 +614,14 @@ img {
   z-index: 2;
 }
 
+.intro-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
 .section-title-large {
   font-size: 3.2rem;
   font-weight: 800;
@@ -703,12 +741,15 @@ img {
 .category-img-wrap {
   width: 80px;
   height: 80px;
+  border-radius: 50%;
   overflow: hidden;
   margin-bottom: 12px;
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .category-card.active .category-img-wrap {
@@ -722,7 +763,7 @@ img {
 .category-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .category-name {
@@ -1025,11 +1066,13 @@ img {
 }
 
 .promo-custom-tag {
+  font-family: 'Lora', Georgia, serif;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
+  font-style: italic;
   color: var(--light);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   line-height: 1.1;
 }
 
@@ -1108,8 +1151,8 @@ img {
 
 .promos-legal {
   margin-top: 40px;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.4);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* 9. Institutional / History Section */
@@ -1208,10 +1251,11 @@ img {
 }
 
 .history-text .section-title {
+  font-family: 'Lora', Georgia, serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-style: italic;
   color: var(--secondary);
 }
@@ -1239,6 +1283,8 @@ img {
 }
 
 .branch-card {
+  position: relative;
+  overflow: hidden;
   background-color: var(--light);
   border-radius: var(--border-radius-lg);
   padding: 40px 30px;
@@ -1273,10 +1319,13 @@ img {
 }
 
 .branch-name {
-  font-size: 1.5rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.6rem;
   font-weight: 700;
+  font-style: italic;
   color: var(--secondary);
   margin-bottom: 12px;
+  text-transform: none;
 }
 
 .branch-address {
@@ -1651,7 +1700,7 @@ img {
 
 /* 14. Newsletter Section */
 .newsletter-section {
-  background-color: #f3ece2;
+  background-color: var(--light);
   border-top: 1px solid var(--bg-cream-dark);
   border-bottom: 1px solid var(--bg-cream-dark);
   position: relative;
@@ -1700,7 +1749,6 @@ img {
 .main-footer {
   background-color: var(--dark);
   color: rgba(255, 255, 255, 0.75);
-  border-top: 4px solid var(--primary);
 }
 
 .footer-grid {
@@ -2010,7 +2058,7 @@ img {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 10px 0;
+  padding: 10px 0 0;
 }
 
 .custom-slides-wrapper {
@@ -2022,16 +2070,20 @@ img {
 .custom-slide-item {
   width: 25%;
   flex-shrink: 0;
-  padding: 20px 10px 40px;
+  padding: 20px 20px 40px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 /* Glassmorphism Slide Style */
 .slide-glass {
-  background: rgba(24, 67, 65, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(24, 67, 65, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
   padding: 40px 60px;
   display: flex;
@@ -2039,8 +2091,11 @@ img {
   justify-content: space-between;
   gap: 40px;
   min-height: 260px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 1050px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   position: relative;
+  margin: 0 auto;
 }
 
 /* Pill CTA Button */
@@ -2123,7 +2178,7 @@ img {
 }
 
 .slide-tag {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #fcb900;
   letter-spacing: 2px;
@@ -2133,7 +2188,7 @@ img {
 .slide-tag-white {
   display: inline-block;
   align-self: flex-start;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 2px;
@@ -2153,15 +2208,16 @@ img {
   font-size: 3.8rem;
   font-weight: 900;
   color: #fcb900;
-  line-height: 1;
+  line-height: 1.15;
   letter-spacing: -1px;
+  margin-top: 6px;
 }
 
 .slide-lg-title {
-  font-size: 2.4rem;
+  font-size: 2.7rem;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .slide-subtitle {
@@ -2204,8 +2260,10 @@ img {
 }
 
 .reviews-title {
+  font-family: 'Lora', Georgia, serif;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
+  font-style: italic;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -2220,12 +2278,12 @@ img {
 .review-badge-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 8px 18px;
+  padding: 6px 14px;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #ffffff;
 }
@@ -2246,8 +2304,8 @@ img {
 }
 
 .badge-img-icon {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
@@ -2312,7 +2370,7 @@ img {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 24px;
 }
 
 .custom-dot {
@@ -2878,3 +2936,268 @@ img {
   }
 }
 
+/* ==========================================================================
+   21. TYPOGRAPHICAL ACCENTS (LORA SEMI BOLD ITALIC)
+   ========================================================================== */
+
+/* General Class for explicit Lora Italic accents */
+.lora-accent {
+  font-family: 'Lora', Georgia, serif !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+  text-transform: none !important;
+}
+
+/* Explicit Lora Bold Italic accents */
+.lora-bold-accent {
+  font-family: 'Lora', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  text-transform: none !important;
+}
+
+/* Accent rules for subtitles across the web */
+.section-subtitle {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* History block italic header */
+.history-text .section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Promos card day tag (e.g. Lunes, Martes, Miércoles) */
+.promo-custom-tag {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: none; /* mixed-case looks gorgeous with Lora Italic */
+}
+
+/* Customer testimonials / reviews quotes style */
+.review-card-item .review-text {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Slide taglines/descriptions styling */
+.slide-desc-xs {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Monday Promo Card photo layout and footer overlay */
+.promo-lunes-card {
+  background-image: url('promo-lunes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 330px;
+}
+
+.promo-zocalo {
+  background: rgba(255, 255, 255, 0.85); /* Whiter glass background */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.promo-zocalo .promo-custom-tag {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary); /* Berry color */
+  margin: 0;
+  text-transform: none;
+  line-height: 1;
+}
+
+.promo-zocalo-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary); /* Navy color */
+  line-height: 1.35;
+  margin: 0 0 4px 0;
+}
+
+.promo-zocalo .promo-custom-btn {
+  color: var(--primary) !important;
+  border-bottom-color: var(--primary) !important;
+}
+
+.promo-zocalo .promo-custom-btn:hover {
+  color: var(--primary-hover) !important;
+  border-bottom-color: var(--primary-hover) !important;
+}
+
+/* Tuesday and Wednesday Promo Card layouts */
+.promo-martes-card {
+  background-image: url('promo-martes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 330px;
+}
+
+.promo-miercoles-card {
+  background-image: url('promo-miercoles.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 330px;
+}
+
+/* Decorative tablecloth checkerboard pattern divider */
+.pattern-mantel {
+  height: 16px;
+  width: 100%;
+  background-image: conic-gradient(at 50% 50%, var(--primary) 25%, #ffffff 25% 50%, var(--primary) 50% 75%, #ffffff 75%);
+  background-size: 16px 16px;
+  border-top: 1px solid rgba(166, 31, 94, 0.15);
+  border-bottom: 1px solid rgba(166, 31, 94, 0.15);
+  border-radius: 4px;
+}
+
+/* Decorative tablecloth pattern strip at top of individual branch cards */
+.pattern-mantel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-image: conic-gradient(at 50% 50%, var(--primary) 25%, #ffffff 25% 50%, var(--primary) 50% 75%, #ffffff 75%);
+  background-size: 20px 20px;
+  border-bottom: 1px solid rgba(166, 31, 94, 0.15);
+  z-index: 5;
+}
+
+/* Decorative tablecloth checkerboard pattern divider for footer (taller than standard) */
+.pattern-mantel-divider {
+  height: 32px;
+  width: 100%;
+  background-image: conic-gradient(at 50% 50%, var(--primary) 25%, #ffffff 25% 50%, var(--primary) 50% 75%, #ffffff 75%);
+  background-size: 32px 32px;
+  border-top: 1px solid rgba(166, 31, 94, 0.15);
+  border-bottom: 1px solid rgba(166, 31, 94, 0.15);
+}
+
+/* Product sizes and price list table layout */
+.product-sizes-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-top: 1px solid rgba(30, 45, 89, 0.08);
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.size-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6px 2px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.size-col:not(:last-child) {
+  border-right: 1px solid rgba(30, 45, 89, 0.1);
+}
+
+.size-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+.size-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+
+/* Full-width "PEDIR ONLINE" Button at bottom of card */
+.btn-pedir-online {
+  display: block;
+  width: calc(100% + 40px); /* spans full card content width by countering card padding */
+  margin: 15px -20px -20px -20px;
+  background-color: var(--dark);
+  color: var(--light);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 0 0 10px 10px; /* matches bottom border-radius of the card */
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.btn-pedir-online:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* Single size price styling */
+.product-price-single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(30, 45, 89, 0.08);
+  margin-top: auto;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.product-price-single .price-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.product-price-single .price-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
