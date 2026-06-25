@@ -1353,54 +1353,59 @@ img {
 /* 11. Secondary Banner */
 .secondary-banner {
   background-color: #025940;
-  background-image: linear-gradient(rgba(2, 89, 64, 0.88), rgba(2, 89, 64, 0.88)), url('promos-bg-texture.jpg');
+  background-image: url('banner-sucursales-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--light);
   overflow: hidden;
   position: relative;
+  padding: 100px 0;
+}
+
+.secondary-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
 .banner-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  min-height: 400px;
-}
-
-.banner-text-block {
-  padding: 60px 40px;
-}
-
-.banner-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.banner-desc {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 30px;
-}
-
-.banner-img-block {
-  height: 100%;
-  min-height: 400px;
   position: relative;
+  z-index: 2;
+  width: 90%;
 }
 
-.banner-img {
+.banner-glass-card {
+  background: rgba(24, 67, 65, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 50px 60px;
+  max-width: 800px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.banner-glass-card .banner-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
 }
 
 /* Banner decorative ingredients */
@@ -1487,10 +1492,14 @@ img {
   padding-bottom: 0; /* Let full-bleed gallery hit near the bottom or have custom padding */
 }
 
+.gallery-section .container {
+  padding-bottom: 20px;
+}
+
 .gallery-carousel-wrapper {
   position: relative;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -1516,6 +1525,17 @@ img {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  transition: flex-basis 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.5s ease;
+}
+
+.gallery-carousel-track:hover .gallery-carousel-item {
+  flex-basis: 40%;
+  filter: brightness(0.75) grayscale(0.2);
+}
+
+.gallery-carousel-track .gallery-carousel-item:hover {
+  flex-basis: 60%;
+  filter: brightness(1.05) grayscale(0);
 }
 
 .gallery-carousel-img {
@@ -1571,12 +1591,24 @@ img {
     flex: 0 0 33.333%; /* 3 items visible on tablet */
     height: 480px;
   }
+  .gallery-carousel-track:hover .gallery-carousel-item {
+    flex-basis: 25%;
+  }
+  .gallery-carousel-track .gallery-carousel-item:hover {
+    flex-basis: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
   .gallery-carousel-item {
     flex: 0 0 20%; /* 5 items visible on desktop (fills exactly 100% since we have 5 items in a loop set) */
     height: 520px;
+  }
+  .gallery-carousel-track:hover .gallery-carousel-item {
+    flex-basis: 15%;
+  }
+  .gallery-carousel-track .gallery-carousel-item:hover {
+    flex-basis: 40%;
   }
 }
 
@@ -2440,13 +2472,16 @@ img {
   }
   
   .banner-container {
-    grid-template-columns: 1fr;
     text-align: center;
   }
-  
-  .banner-img-block {
-    height: 300px;
-    min-height: auto;
+
+  .banner-glass-card {
+    padding: 30px 20px;
+    gap: 16px;
+  }
+
+  .banner-glass-card .banner-title {
+    font-size: 1.8rem;
   }
   
   .press-grid {
@@ -2778,12 +2813,16 @@ img {
   justify-content: center;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s;
   will-change: transform;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .menu-category-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Retain full icon aspect */
+  object-fit: cover;
 }
 
 .menu-category-tab.active .menu-category-img-wrap {
@@ -3201,3 +3240,64 @@ img {
   font-weight: 700;
   color: var(--primary);
 }
+
+/* History Section title overrides for dual-font lines */
+.history-text .section-title.history-title {
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.history-text .section-title.history-title .title-main {
+  font-family: var(--font-primary);
+  font-weight: 700; /* Rubik Bold */
+  font-style: normal;
+}
+
+.history-text .section-title.history-title .title-sub {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic; /* Lora Italic */
+  font-weight: 600;
+}
+
+/* Secondary Banner title overrides for dual-font lines */
+.banner-title.banner-dual-title {
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.banner-title.banner-dual-title .title-main {
+  font-family: var(--font-primary);
+  font-weight: 700; /* Rubik Bold */
+  font-style: normal;
+}
+
+.banner-title.banner-dual-title .title-sub {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic; /* Lora Italic */
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Page Header Banners title styles (Lora Italic) */
+.promos-section h1.section-title {
+  font-family: 'Lora', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin: 0 auto 10px auto !important;
+  display: block;
+}
+
+
+

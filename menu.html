@@ -47,8 +47,17 @@
   </header>
 
   <!-- Menu Hero Section -->
-  <section class="promos-section" style="padding: 100px 0 50px; text-align: center;">
-    <div class="container" style="padding: 40px 0 20px;">
+  <section class="promos-section" style="padding: 110px 0 30px; text-align: center; position: relative; overflow: hidden;">
+    <!-- Background patterns to add texture -->
+    <img src="vector-6.png" class="bg-pattern" alt="" style="position: absolute; top: 10%; left: 5%; width: 70px; opacity: 0.15; transform: rotate(15deg); pointer-events: none; z-index: 1;">
+    <img src="vector-7.png" class="bg-pattern" alt="" style="position: absolute; top: 10%; right: 5%; width: 85px; opacity: 0.15; transform: rotate(-20deg); pointer-events: none; z-index: 1;">
+    <img src="vector-8.png" class="bg-pattern" alt="" style="position: absolute; bottom: 10%; left: 15%; width: 65px; opacity: 0.15; transform: rotate(35deg); pointer-events: none; z-index: 1;">
+    <img src="vector-10.png" class="bg-pattern" alt="" style="position: absolute; bottom: 10%; right: 15%; width: 75px; opacity: 0.15; transform: rotate(-15deg); pointer-events: none; z-index: 1;">
+    <img src="vector-11.png" class="bg-pattern" alt="" style="position: absolute; top: 20%; left: 30%; width: 70px; opacity: 0.12; transform: rotate(40deg); pointer-events: none; z-index: 1;">
+    <img src="vector-6.png" class="bg-pattern" alt="" style="position: absolute; bottom: 20%; right: 35%; width: 65px; opacity: 0.12; transform: rotate(-30deg); pointer-events: none; z-index: 1;">
+    <img src="vector-7.png" class="bg-pattern" alt="" style="position: absolute; top: 15%; left: 60%; width: 70px; opacity: 0.12; transform: rotate(25deg); pointer-events: none; z-index: 1;">
+
+    <div class="container" style="padding: 15px 0 10px; position: relative; z-index: 2;">
       <h1 class="section-title text-white" style="font-size: 3rem; margin-bottom: 10px;">Nuestro Menú</h1>
       <div class="title-underline bg-white" style="margin: 0 auto 20px;"></div>
     </div>
@@ -62,37 +71,37 @@
       <div class="menu-categories-nav">
         <button class="menu-category-tab active" data-category="pizzas">
           <div class="menu-category-img-wrap">
-            <img src="pizza-icon.png" alt="Pizzas">
+            <img src="muzzarellacon huevo duro picado.jpg" alt="Pizzas">
           </div>
           <span class="menu-category-text">Pizzas</span>
         </button>
         <button class="menu-category-tab" data-category="empanadas">
           <div class="menu-category-img-wrap">
-            <img src="empanadas-icon.png" alt="Empanadas">
+            <img src="empanadas5.jpg" alt="Empanadas">
           </div>
           <span class="menu-category-text">Empanadas</span>
         </button>
         <button class="menu-category-tab" data-category="tartas">
           <div class="menu-category-img-wrap">
-            <img src="tartas-icon.png" alt="Tartas">
+            <img src="tarta.jpeg" alt="Tartas">
           </div>
           <span class="menu-category-text">Tartas</span>
         </button>
         <button class="menu-category-tab" data-category="cafeteria">
           <div class="menu-category-img-wrap">
-            <img src="cafeteria-icon.png" alt="Cafetería">
+            <img src="woman-hands-holding-latte-art-coffee-cup.jpg" alt="Cafetería">
           </div>
           <span class="menu-category-text">Cafetería</span>
         </button>
         <button class="menu-category-tab" data-category="bebidas">
           <div class="menu-category-img-wrap">
-            <img src="bebidas-icon.png" alt="Bebidas">
+            <img src="hand-holding-glass-red-wine-with-bottle-social-setting.jpg" alt="Bebidas">
           </div>
           <span class="menu-category-text">Bebidas</span>
         </button>
         <button class="menu-category-tab" data-category="postres">
           <div class="menu-category-img-wrap">
-            <img src="postres-icon.png" alt="Postres">
+            <img src="flan02.jpg" alt="Postres">
           </div>
           <span class="menu-category-text">Postres</span>
         </button>
@@ -1164,47 +1173,30 @@
       </div>
 
       <div class="promos-grid">
-        <!-- Promo 1: Lunes (Red) -->
-        <div class="promo-card card-red">
-          <!-- Decorative basil leaves -->
-          <img src="basil-leaf-1.png" alt="" class="promo-deco-leaf leaf-pos-1">
-          <img src="basil-leaf-2.png" alt="" class="promo-deco-leaf leaf-pos-2">
-          
-          <div class="promo-custom-content">
+        <!-- Promo 1: Lunes (Photo Cover) -->
+        <div class="promo-card promo-lunes-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Lunes</span>
-            <p class="promo-custom-title">Pedí una pizza chica <br>y ¡llevate una grande!</p>
-            <a href="#menuSearch" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="lunes-pizza.png" alt="Promo Lunes" class="promo-custom-img">
+            <p class="promo-zocalo-title">Pedí una pizza chica y ¡llevate una grande!</p>
+            <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
           </div>
         </div>
 
-        <!-- Promo 2: Martes (Orange) -->
-        <div class="promo-card card-orange">
-          <div class="promo-custom-content">
+        <!-- Promo 2: Martes (Photo Cover) -->
+        <div class="promo-card promo-martes-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Martes</span>
-            <p class="promo-custom-title">Pedí 4 empanadas <br>y pagá 3.</p>
-            <a href="#menuSearch" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="martes-empanadas.png" alt="Promo Martes" class="promo-custom-img">
+            <p class="promo-zocalo-title">Pedí 4 empanadas y pagá 3.</p>
+            <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
           </div>
         </div>
 
-        <!-- Promo 3: Miércoles (Green) -->
-        <div class="promo-card card-green">
-          <!-- Decorative tomatoes on the left -->
-          <img src="tomato-1.png" alt="" class="promo-deco-leaf tomato-pos-1">
-          <img src="tomato-2.png" alt="" class="promo-deco-leaf tomato-pos-2">
-
-          <div class="promo-custom-content">
+        <!-- Promo 3: Miércoles (Photo Cover) -->
+        <div class="promo-card promo-miercoles-card">
+          <div class="promo-zocalo">
             <span class="promo-custom-tag">Miércoles</span>
-            <p class="promo-custom-title">Comprá 1 pizza grande <br>y llevá 3 porciones de fainá de regalo.</p>
-            <a href="#menuSearch" class="promo-custom-btn">Pedí ahora</a>
-          </div>
-          <div class="promo-custom-img-wrap">
-            <img src="miercoles-pizza.png" alt="Promo Miércoles" class="promo-custom-img">
+            <p class="promo-zocalo-title">Pizza grande y 3 fainás de regalo</p>
+            <a href="#productos" class="promo-custom-btn">Pedí ahora</a>
           </div>
         </div>
       </div>

@@ -262,3 +262,26 @@ function selectCardSize(colElement, cardId) {
     buyBtn.setAttribute('onclick', `addToCart('${productName}', '${sizeSelected}')`);
   }
 }
+
+// 10. Gallery Carousel Navigation
+function initGalleryCarousel() {
+  const container = document.getElementById('galleryTrackContainer');
+  const prevBtn = document.getElementById('galleryPrevBtn');
+  const nextBtn = document.getElementById('galleryNextBtn');
+  if (!container) return;
+
+  const scrollAmount = 350;
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
+}
+
