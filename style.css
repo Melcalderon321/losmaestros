@@ -3544,6 +3544,44 @@ img {
   align-self: stretch;
 }
 
+/* Responsive adjustment for Slider 4 on notebook screens (1366px and below) */
+@media (max-width: 1400px) {
+  .slide-reviews {
+    padding: 20px 25px;
+    gap: 15px;
+  }
+  .reviews-header-new {
+    margin-bottom: 15px;
+    gap: 20px;
+  }
+  .reviews-title-new {
+    font-size: 1.85rem;
+  }
+  .header-badges-right {
+    gap: 20px;
+  }
+  .google-logo-text {
+    font-size: 1.8rem;
+  }
+  .google-reviews-label {
+    font-size: 0.95rem;
+  }
+  .guru-badge-img {
+    height: 80px;
+  }
+  .reviews-panel-new {
+    padding: 20px 15px;
+  }
+  .review-col-new {
+    padding: 0 15px;
+    gap: 8px;
+  }
+  .review-text-new {
+    font-size: 0.8125rem; /* 13px */
+    line-height: 1.45;
+  }
+}
+
 /* Responsive adjustment for Slider 4 */
 @media (max-width: 768px) {
   .reviews-header-new {
