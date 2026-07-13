@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategorySelectors();
   initAutoCustomSlider();
   initGalleryCarousel();
+  initAlternatingPhone();
 });
 
 // 1. Mobile Menu Toggle
@@ -283,5 +284,30 @@ function initGalleryCarousel() {
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
+}
+
+
+
+// 12. Alternating Recoleta call numbers on a single button
+function initAlternatingPhone() {
+  const phoneBtn = document.getElementById('recoleta-phone-btn');
+  const phoneTxt = document.getElementById('recoleta-phone-text');
+  if (!phoneBtn || !phoneTxt) return;
+
+  const phones = [
+    { href: 'tel:4812-2721', text: '¡Llamá! 4812-2721' },
+    { href: 'tel:4816-1934', text: '¡Llamá! 4816-1934' }
+  ];
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % phones.length;
+    phoneTxt.style.opacity = '0';
+    setTimeout(() => {
+      phoneBtn.setAttribute('href', phones[index].href);
+      phoneTxt.textContent = phones[index].text;
+      phoneTxt.style.opacity = '1';
+    }, 250);
+  }, 4000);
 }
 

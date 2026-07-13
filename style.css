@@ -388,6 +388,47 @@ img {
   z-index: 5;
 }
 
+/* Hero Floating Buttons */
+.hero-floating-buttons {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.floating-btn-group {
+  position: relative;
+}
+
+.floating-btn {
+  display: block;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  outline: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.08) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.floating-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
 .hero-content {
   position: relative;
   z-index: 10;
@@ -1335,13 +1376,13 @@ img {
   align-items: center;
   justify-content: center;
   margin: 0 auto 24px;
-  color: var(--primary);
+  color: var(--green);
   font-size: 1.8rem;
   transition: var(--transition);
 }
 
 .branch-card:hover .branch-icon-header {
-  background-color: var(--primary);
+  background-color: var(--green);
   color: var(--light);
 }
 
@@ -1373,14 +1414,17 @@ img {
 }
 
 .branch-buttons .btn {
-  width: fit-content;
-  min-width: 160px;
+  width: 220px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* 11. Secondary Banner */
 .secondary-banner {
   background-color: #025940;
-  background-image: url('banner-sucursales-bg.jpg');
+  background-image: url('banner-sucursales-bg-optimized.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1396,7 +1440,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
 
@@ -1415,8 +1459,8 @@ img {
   background: rgba(24, 67, 65, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  border-radius: 16px;
   padding: 50px 60px;
   max-width: 800px;
   width: 100%;
@@ -1426,6 +1470,20 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  position: relative;
+}
+
+/* Inner gold dashed border for double filete look */
+.banner-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  border: 1px dashed rgba(197, 160, 89, 0.25);
+  border-radius: 12px;
+  pointer-events: none;
 }
 
 .banner-glass-card .banner-title {
@@ -2274,6 +2332,7 @@ img {
   line-height: 1.15;
   letter-spacing: -1px;
   margin-top: 6px;
+  white-space: nowrap;
 }
 
 .slide-lg-title {
@@ -2630,6 +2689,20 @@ img {
     height: auto;
     padding: 120px 0 80px;
   }
+  
+  .hero-floating-buttons {
+    right: 12px;
+    bottom: 20px;
+    gap: 12px;
+  }
+  
+  .floating-btn {
+    width: 52px;
+    height: 52px;
+    box-shadow: none;
+  }
+  
+
   
   .hero-title {
     font-size: 2.5rem;
@@ -3328,6 +3401,465 @@ img {
   text-align: center !important;
   margin: 0 auto 10px auto !important;
   display: block;
+}
+
+/* 12. Slider 4 - Social Proof / Reviews Custom Design */
+.reviews-header-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  gap: 40px;
+}
+
+.header-left {
+  flex: 1.4;
+  text-align: left;
+}
+
+.reviews-title-new {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  color: #ffffff;
+  text-transform: none;
+}
+
+.header-badges-right {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Reduced gap between Google Reviews and Restaurant Guru */
+}
+
+.google-reviews-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.google-logo-text {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.google-reviews-label {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.google-stars {
+  margin-top: 6px;
+  display: flex;
+  gap: 4px;
+  color: #ffc107;
+  font-size: 0.95rem;
+}
+
+.guru-badge-img {
+  height: 110px;
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-panel-new {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 0;
+  align-items: stretch;
+}
+
+.review-col-new {
+  flex: 1;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quote-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d0d0d;
+  font-size: 0.85rem;
+}
+
+.user-name-new {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.user-stars-new {
+  color: #ffc107;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 3px;
+}
+
+.review-text-new {
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  text-align: left;
+}
+
+.review-divider {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-self: stretch;
+}
+
+/* Responsive adjustment for Slider 4 */
+@media (max-width: 768px) {
+  .reviews-header-new {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .header-left, .header-badges-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .reviews-title-new {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .reviews-panel-new {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+  
+  .review-col-new {
+    padding: 0 10px;
+  }
+  
+  .review-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* 13. Promo Cards - New Promotional Banner Style */
+.promos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.promo-card-new {
+  background-color: #fbfbf6; /* light warm cream background, matching the studio photo tone */
+  border-radius: 16px;
+  overflow: visible; /* Changed to visible to let corner decorations pop out! */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  position: relative;
+}
+
+.promo-card-new:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.promo-img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 60%; /* 5:3 Aspect Ratio for banner photos */
+  overflow: hidden;
+  background-color: #e5e5dd;
+  border-radius: 16px 16px 0 0; /* Directly round the top corners of the image container */
+}
+
+.promo-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.promo-card-new:hover .promo-card-img {
+  transform: scale(1.05);
+}
+
+/* Day Ribbon - swallowtail peak style, navy blue with white text */
+.promo-day-ribbon {
+  position: absolute;
+  top: 15px;
+  left: -8px;
+  background-color: #d81b60; /* Magenta */
+  color: #ffffff; /* White text */
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 6px 32px 6px 20px; /* Extra right padding for swallowtail chevron clipping */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0, 86% 50%, 100% 100%, 0 100%); /* Swallowtail/fork peak on the right */
+}
+
+/* Ribbon fold effect underneath (matching dark magenta theme) */
+.promo-day-ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  border-width: 6px 8px 0 0;
+  border-style: solid;
+  border-color: #880e4f transparent transparent transparent;
+}
+
+/* Floating Corner Decorations inside Cards */
+.promo-card-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 20; /* Keep floating elements over the cards and images */
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.35));
+}
+
+/* Specific size and shadow rules for tomatoes (larger) */
+.promo-card-deco[src="deco-tomato.png"] {
+  width: 110px;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.4));
+}
+
+.deco-card-top-right {
+  top: -24px;
+  right: -24px;
+  width: 75px;
+  animation: float-slow-1 8s ease-in-out infinite;
+}
+
+.deco-card-top-right[src="deco-tomato.png"] {
+  top: -35px;
+  right: -35px;
+}
+
+.deco-card-bottom-right {
+  bottom: -22px;
+  right: -22px;
+  width: 80px;
+  animation: float-slow-2 9s ease-in-out infinite;
+}
+
+.deco-card-bottom-right[src="deco-tomato.png"] {
+  bottom: -35px;
+  right: -35px;
+  width: 115px;
+}
+
+.deco-card-top-left {
+  top: -22px;
+  left: -22px;
+  width: 70px;
+  animation: float-slow-1 7s ease-in-out infinite;
+}
+
+.deco-card-bottom-left {
+  bottom: -24px;
+  left: -24px;
+  width: 75px;
+  animation: float-slow-2 8s ease-in-out infinite;
+}
+
+.deco-card-bottom-left[src="deco-tomato.png"] {
+  bottom: -35px;
+  left: -35px;
+}
+
+.promo-info-wrapper {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 16px;
+  
+  /* Gold border filete styling */
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  margin: 12px;
+  border-radius: 12px;
+  background-color: #fbfbf6;
+  position: relative;
+}
+
+/* Add a thin offset border inside for double filete look */
+.promo-info-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border: 1px dashed rgba(197, 160, 89, 0.2);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.promo-text-new {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin: 0;
+  z-index: 2;
+}
+
+.promo-card-btn {
+  width: 100%;
+  max-width: 180px;
+  justify-content: center;
+  z-index: 2;
+  background-color: #0c2340 !important;
+  border-color: #0c2340 !important;
+  color: #ffffff !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
+}
+
+.promo-card-btn:hover {
+  background-color: #061120 !important;
+  border-color: #061120 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Make sure container content stays in front of floating ingredients */
+.promos-section .container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Floating decorative ingredients styles */
+.promo-deco-item {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.82;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+  transition: transform 0.2s ease;
+}
+
+.deco-tomato-1 {
+  top: 8%;
+  left: 3%;
+  width: 110px;
+  animation: float-slow-1 12s ease-in-out infinite;
+}
+
+.deco-tomato-2 {
+  bottom: 6%;
+  right: 2%;
+  width: 100px;
+  animation: float-slow-2 14s ease-in-out infinite;
+}
+
+.deco-basil-1 {
+  bottom: 8%;
+  left: 5%;
+  width: 80px;
+  animation: float-slow-2 10s ease-in-out infinite;
+}
+
+.deco-basil-2 {
+  top: 12%;
+  right: 4%;
+  width: 75px;
+  animation: float-slow-1 9s ease-in-out infinite;
+}
+
+/* Smooth drifting animations */
+@keyframes float-slow-1 {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-20px) rotate(8deg) scale(1.03); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+@keyframes float-slow-2 {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(18px) rotate(-10deg) scale(0.97); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+/* Responsive adjustment for promos */
+@media (max-width: 992px) {
+  .promos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .promo-deco-item {
+    display: none; /* Hide background clutter on smaller tablet screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .promos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* 1366px screen size / 1400px media query responsive optimization */
+@media (max-width: 1400px) {
+  .slide-xl-title, .slide-xl-title-accent {
+    font-size: 3.2rem;
+  }
+  .slide-lg-title {
+    font-size: 2.3rem;
+  }
 }
 
 
