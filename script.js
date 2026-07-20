@@ -271,16 +271,16 @@ function initGalleryCarousel() {
   const nextBtn = document.getElementById('galleryNextBtn');
   if (!container) return;
 
-  const scrollAmount = 350;
-
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
+      const scrollAmount = container.clientWidth / 2;
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
+      const scrollAmount = container.clientWidth / 2;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
