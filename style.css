@@ -222,10 +222,11 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  overflow: visible;
 }
 
 .logo-img {
-  height: 55px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
